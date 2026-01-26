@@ -10,8 +10,18 @@ export interface Tab {
   isActive: boolean
 }
 
-const tabs = ref<Tab[]>([])
-const activeTabId = ref<string | null>(null)
+// Default tab: README.md
+const defaultTab: Tab = {
+  id: 'tab-readme',
+  name: 'README.md',
+  view: 'readme',
+  icon: 'fab fa-markdown',
+  iconClass: 'text-blue-300',
+  isActive: true
+}
+
+const tabs = ref<Tab[]>([defaultTab])
+const activeTabId = ref<string | null>('tab-readme')
 
 export function useTabs() {
   const openTab = (file: FileItem) => {
