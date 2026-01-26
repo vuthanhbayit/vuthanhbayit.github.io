@@ -21,7 +21,6 @@ const { activeView, hasOpenTabs } = useTabs()
       <template v-else>
         <ViewsSkillsView v-if="activeView === 'skills'" />
         <ViewsEnvView v-else-if="activeView === 'env'" />
-        <ViewsAboutView v-else-if="activeView === 'about'" />
         <ViewsPackageView v-else-if="activeView === 'package'" />
         <ViewsExperienceView v-else-if="activeView === 'experience'" />
         <ViewsReadmeView v-else-if="activeView === 'readme'" />

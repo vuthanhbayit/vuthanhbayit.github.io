@@ -1,75 +1,56 @@
-# Nuxt Minimal Starter
+# Vu Thanh Bay - Senior FrontEnd Developer
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+> Passionate about creating performant, scalable, and visually stunning web applications. Dedicated to clean code, component-driven architecture, and exceptional user experiences.
 
-## Setup
+With **7+ years of experience** in the frontend ecosystem, I specialize in building complex single-page applications and interactive dashboards. My approach combines technical precision with a designer's eye for detail.
 
-Make sure to install dependencies:
+## Core Competencies
+
+- **Vue.js Ecosystem:** Vue 2/3, Nuxt.js, Pinia, Vuex
+- **Languages:** TypeScript, JavaScript (ES6+), HTML5, CSS3
+- **Styling:** Tailwind CSS, SCSS, Styled Components
+- **Performance:** Core Web Vitals, Lazy Loading, SSR/SSG
+- **Testing:** Jest, Cypress, Vitest
+- **Tools:** Git, Webpack, Vite, Docker, Figma
+
+## Career Roadmap
+
+### Senior Frontend Developer @ Thinkpro
+**2021 - Present**
+
+Leading the frontend migration to Nuxt 3, improving TTI by 40%. Architected the company's internal design system used across 5 products.
+
+### Frontend Developer @ Azoom
+**2019 - 2021**
+
+Developed real-time property management dashboards. Implemented heavy data visualization features using D3.js and ECharts.
+
+### Web Developer @ Amela
+**2019 - 2020**
+
+Full-stack development for e-commerce clients. Focus on responsive design and PHP/Laravel backend integration.
+
+## Project Setup
+
+To view this portfolio locally with full IDE simulation:
 
 ```bash
-# npm
+# Clone the repository
+git clone https://github.com/vuthanhbayit/vuthanhbayit.github.io
+
+# Navigate to directory
+cd portfolio
+
+# Install dependencies
 npm install
 
-# pnpm
-pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
-```
-
-## Development Server
-
-Start the development server on `http://localhost:3000`:
-
-```bash
-# npm
+# Start development server
 npm run dev
-
-# pnpm
-pnpm dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
 ```
 
-## Production
+## Contact
 
-Build the application for production:
+Open for opportunities and interesting collaborations.
 
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+- **Email:** vuthanhbayit@gmail.com
+- **LinkedIn:** linkedin.com/in/vu-thanh-bay

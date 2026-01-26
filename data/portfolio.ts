@@ -36,7 +36,7 @@ export const profile: Profile = {
   role: 'Senior Frontend Developer',
   email: 'vuthanhbayit@gmail.com',
   github: 'github.com/vuthanhbayit',
-  linkedin: 'linkedin.com/in/vuthanhbay',
+  linkedin: 'linkedin.com/in/vu-thanh-bay',
   location: 'Hanoi, Vietnam',
   yearsOfExperience: 7,
   avatar: '/images/avatar.jpg',
@@ -126,13 +126,6 @@ export const fileTree: FileItem[] = [
     iconClass: 'text-blue-400',
     expanded: true,
     children: [
-      {
-        name: 'About.vue',
-        type: 'file',
-        icon: 'fab fa-vuejs',
-        iconClass: 'text-green-500',
-        view: 'about'
-      },
       {
         name: 'Experience.ts',
         type: 'file',
