@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script lang="ts" setup>
 import { experiences } from '~/data/portfolio'
 </script>
 
@@ -7,19 +7,19 @@ import { experiences } from '~/data/portfolio'
     <!-- Code Editor Panel -->
     <div class="flex-1 overflow-y-auto scrollbar-thin p-2 md:p-6 font-mono text-sm leading-6 relative z-10">
       <div class="code-line">
-        <span class="syntax-keyword">interface</span> <span class="syntax-class">Experience</span> <span class="text-ide-text">{</span>
+        <span class="syntax-keyword">interface&nbsp;</span><span class="syntax-class">Experience&nbsp;</span><span class="text-ide-text">{</span>
       </div>
       <div class="code-line">
-        <span class="ml-2 syntax-property">company</span>: <span class="syntax-type">string</span>;
+        <span class="ml-2 syntax-property">company</span><span class="text-ide-text">:&nbsp;</span><span class="syntax-type">string</span><span class="text-ide-text">;</span>
       </div>
       <div class="code-line">
-        <span class="ml-2 syntax-property">role</span>: <span class="syntax-type">string</span>;
+        <span class="ml-2 syntax-property">role</span><span class="text-ide-text">:&nbsp;</span><span class="syntax-type">string</span><span class="text-ide-text">;</span>
       </div>
       <div class="code-line">
-        <span class="ml-2 syntax-property">period</span>: <span class="syntax-type">string</span>;
+        <span class="ml-2 syntax-property">period</span><span class="text-ide-text">:&nbsp;</span><span class="syntax-type">string</span><span class="text-ide-text">;</span>
       </div>
       <div class="code-line">
-        <span class="ml-2 syntax-property">technologies</span>: <span class="syntax-type">string[]</span>;
+        <span class="ml-2 syntax-property">technologies</span><span class="text-ide-text">:&nbsp;</span><span class="syntax-type">string[]</span><span class="text-ide-text">;</span>
       </div>
       <div class="code-line">
         <span class="text-ide-text">}</span>
@@ -27,7 +27,7 @@ import { experiences } from '~/data/portfolio'
       <div class="code-line mb-4"></div>
 
       <div class="code-line">
-        <span class="syntax-keyword">const</span> <span class="syntax-variable">experiences</span>: <span class="syntax-class">Experience</span>[] = [
+        <span class="syntax-keyword">const&nbsp;</span><span class="syntax-variable">experiences</span><span class="text-ide-text">:&nbsp;</span><span class="syntax-class">Experience</span><span class="text-ide-text">[]&nbsp;=&nbsp;[</span>
       </div>
 
       <template v-for="(exp, index) in experiences" :key="exp.company">
@@ -35,41 +35,41 @@ import { experiences } from '~/data/portfolio'
           <span class="ml-2 text-ide-text">{</span>
         </div>
         <div class="code-line">
-          <span class="ml-4 syntax-property">company</span>: <span class="syntax-string">"{{ exp.company }}"</span>,
+          <span class="ml-4 syntax-property">company</span><span class="text-ide-text">:&nbsp;</span><span class="syntax-string">"{{ exp.company }}"</span><span class="text-ide-text">,</span>
         </div>
         <div class="code-line">
-          <span class="ml-4 syntax-property">role</span>: <span class="syntax-string">"{{ exp.role }}"</span>,
+          <span class="ml-4 syntax-property">role</span><span class="text-ide-text">:&nbsp;</span><span class="syntax-string">"{{ exp.role }}"</span><span class="text-ide-text">,</span>
         </div>
         <div class="code-line">
-          <span class="ml-4 syntax-property">period</span>: <span class="syntax-string">"{{ exp.period }}"</span>,
+          <span class="ml-4 syntax-property">period</span><span class="text-ide-text">:&nbsp;</span><span class="syntax-string">"{{ exp.period }}"</span><span class="text-ide-text">,</span>
         </div>
         <div class="code-line">
-          <span class="ml-4 syntax-property">isCurrent</span>: <span class="syntax-keyword">{{ exp.isCurrent }}</span>,
+          <span class="ml-4 syntax-property">isCurrent</span><span class="text-ide-text">:&nbsp;</span><span class="syntax-keyword">{{ exp.isCurrent }}</span><span class="text-ide-text">,</span>
         </div>
         <div class="code-line">
-          <span class="ml-4 syntax-property">technologies</span>: [
+          <span class="ml-4 syntax-property">technologies</span><span class="text-ide-text">:&nbsp;[</span>
         </div>
         <div class="code-line">
           <span class="ml-6">
             <span v-for="(tech, i) in exp.technologies" :key="tech">
-              <span class="syntax-string">"{{ tech }}"</span><span v-if="i < exp.technologies.length - 1">, </span>
+              <span class="syntax-string">"{{ tech }}"</span><span v-if="i < exp.technologies.length - 1" class="text-ide-text">,&nbsp;</span>
             </span>
           </span>
         </div>
         <div class="code-line">
-          <span class="ml-4">],</span>
+          <span class="ml-4 text-ide-text">],</span>
         </div>
         <div class="code-line">
-          <span class="ml-4 syntax-property">contributions</span>: [
+          <span class="ml-4 syntax-property">contributions</span><span class="text-ide-text">:&nbsp;[</span>
         </div>
         <div v-for="(contrib, i) in exp.contributions.slice(0, 3)" :key="i" class="code-line">
-          <span class="ml-6 syntax-string">"{{ contrib }}"</span><span v-if="i < Math.min(exp.contributions.length, 3) - 1">,</span>
+          <span class="ml-6 syntax-string">"{{ contrib }}"</span><span v-if="i < Math.min(exp.contributions.length, 3) - 1" class="text-ide-text">,</span>
         </div>
         <div class="code-line">
-          <span class="ml-4">]</span>
+          <span class="ml-4 text-ide-text">]</span>
         </div>
         <div class="code-line">
-          <span class="ml-2 text-ide-text">}</span><span v-if="index < experiences.length - 1">,</span>
+          <span class="ml-2 text-ide-text">}</span><span v-if="index < experiences.length - 1" class="text-ide-text">,</span>
         </div>
       </template>
 
@@ -79,7 +79,7 @@ import { experiences } from '~/data/portfolio'
       <div class="code-line mb-4"></div>
 
       <div class="code-line">
-        <span class="syntax-keyword">export</span> <span class="syntax-keyword">default</span> <span class="syntax-variable">experiences</span>;
+        <span class="syntax-keyword">export&nbsp;</span><span class="syntax-keyword">default&nbsp;</span><span class="syntax-variable">experiences</span><span class="text-ide-text">;</span>
       </div>
 
       <!-- Cursor -->

@@ -10,25 +10,25 @@ import { profile, experiences } from '~/data/portfolio'
         <span class="syntax-keyword">&#60;template&#62;</span>
       </div>
       <div class="code-line">
-        <span class="ml-2 syntax-keyword">&#60;div</span> <span class="syntax-property">class</span>=<span class="syntax-string">"profile-card"</span><span class="syntax-keyword">&#62;</span>
+        <span class="ml-2 syntax-keyword">&#60;div&nbsp;</span><span class="syntax-property">class</span><span class="text-ide-text">=</span><span class="syntax-string">"profile-card"</span><span class="syntax-keyword">&#62;</span>
       </div>
       <div class="code-line">
         <span class="ml-4 syntax-comment">&#60;!-- Profile Header --&#62;</span>
       </div>
       <div class="code-line">
-        <span class="ml-4 syntax-keyword">&#60;header</span> <span class="syntax-property">class</span>=<span class="syntax-string">"flex items-center gap-4"</span><span class="syntax-keyword">&#62;</span>
+        <span class="ml-4 syntax-keyword">&#60;header&nbsp;</span><span class="syntax-property">class</span><span class="text-ide-text">=</span><span class="syntax-string">"flex items-center gap-4"</span><span class="syntax-keyword">&#62;</span>
       </div>
       <div class="code-line">
-        <span class="ml-6 syntax-keyword">&#60;img</span> <span class="syntax-property">:src</span>=<span class="syntax-string">"avatar"</span> <span class="syntax-property">class</span>=<span class="syntax-string">"w-20 h-20 rounded-full"</span> <span class="syntax-keyword">/&#62;</span>
+        <span class="ml-6 syntax-keyword">&#60;img&nbsp;</span><span class="syntax-property">:src</span><span class="text-ide-text">=</span><span class="syntax-string">"avatar"</span>&nbsp;<span class="syntax-property">class</span><span class="text-ide-text">=</span><span class="syntax-string">"w-20 h-20 rounded-full"</span>&nbsp;<span class="syntax-keyword">/&#62;</span>
       </div>
       <div class="code-line">
         <span class="ml-6 syntax-keyword">&#60;div&#62;</span>
       </div>
       <div class="code-line">
-        <span class="ml-8 syntax-keyword">&#60;h1&#62;</span><span class="text-ide-text">{{ name  }}</span><span class="syntax-keyword">&#60;/h1&#62;</span>
+        <span class="ml-8 syntax-keyword">&#60;h1&#62;</span><span class="text-ide-text">&#123;&#123;&nbsp;name&nbsp;&#125;&#125;</span><span class="syntax-keyword">&#60;/h1&#62;</span>
       </div>
       <div class="code-line">
-        <span class="ml-8 syntax-keyword">&#60;p</span> <span class="syntax-property">class</span>=<span class="syntax-string">"text-cyan"</span><span class="syntax-keyword">&#62;</span><span class="text-ide-text">{{ role }}</span><span class="syntax-keyword">&#60;/p&#62;</span>
+        <span class="ml-8 syntax-keyword">&#60;p&nbsp;</span><span class="syntax-property">class</span><span class="text-ide-text">=</span><span class="syntax-string">"text-cyan"</span><span class="syntax-keyword">&#62;</span><span class="text-ide-text">&#123;&#123;&nbsp;role&nbsp;&#125;&#125;</span><span class="syntax-keyword">&#60;/p&#62;</span>
       </div>
       <div class="code-line">
         <span class="ml-6 syntax-keyword">&#60;/div&#62;</span>
@@ -45,25 +45,25 @@ import { profile, experiences } from '~/data/portfolio'
       <div class="code-line mb-4"></div>
 
       <div class="code-line">
-        <span class="syntax-keyword">&#60;script</span> <span class="syntax-property">setup</span> <span class="syntax-property">lang</span>=<span class="syntax-string">"ts"</span><span class="syntax-keyword">&#62;</span>
+        <span class="syntax-keyword">&#60;script&nbsp;</span><span class="syntax-property">setup</span>&nbsp;<span class="syntax-property">lang</span><span class="text-ide-text">=</span><span class="syntax-string">"ts"</span><span class="syntax-keyword">&#62;</span>
       </div>
       <div class="code-line">
-        <span class="ml-2 syntax-keyword">const</span> <span class="syntax-variable">profile</span> = <span class="syntax-function">reactive</span>({
+        <span class="ml-2 syntax-keyword">const&nbsp;</span><span class="syntax-variable">profile</span>&nbsp;<span class="text-ide-text">=&nbsp;</span><span class="syntax-function">reactive</span><span class="text-ide-text">(&#123;</span>
       </div>
       <div class="code-line">
-        <span class="ml-4 syntax-property">name</span>: <span class="syntax-string">'{{ profile.name }}'</span>,
+        <span class="ml-4 syntax-property">name</span><span class="text-ide-text">:&nbsp;</span><span class="syntax-string">'{{ profile.name }}'</span><span class="text-ide-text">,</span>
       </div>
       <div class="code-line">
-        <span class="ml-4 syntax-property">role</span>: <span class="syntax-string">'{{ profile.role }}'</span>,
+        <span class="ml-4 syntax-property">role</span><span class="text-ide-text">:&nbsp;</span><span class="syntax-string">'{{ profile.role }}'</span><span class="text-ide-text">,</span>
       </div>
       <div class="code-line">
-        <span class="ml-4 syntax-property">location</span>: <span class="syntax-string">'{{ profile.location }}'</span>,
+        <span class="ml-4 syntax-property">location</span><span class="text-ide-text">:&nbsp;</span><span class="syntax-string">'{{ profile.location }}'</span><span class="text-ide-text">,</span>
       </div>
       <div class="code-line">
-        <span class="ml-4 syntax-property">experience</span>: <span class="syntax-number">{{ profile.yearsOfExperience }}</span>,
+        <span class="ml-4 syntax-property">experience</span><span class="text-ide-text">:&nbsp;</span><span class="syntax-number">{{ profile.yearsOfExperience }}</span><span class="text-ide-text">,</span>
       </div>
       <div class="code-line">
-        <span class="ml-2">})</span>
+        <span class="ml-2 text-ide-text">&#125;)</span>
       </div>
       <div class="code-line">
         <span class="syntax-keyword">&#60;/script&#62;</span>

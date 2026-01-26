@@ -12,40 +12,40 @@ import { skills } from '~/data/portfolio'
       </div>
       <div class="code-line"></div>
       <div class="code-line">
-        <span class="syntax-variable">$experience</span>:<span class="syntax-unit ml-1">7years</span>;
+        <span class="syntax-variable">$experience</span><span class="text-ide-text">:&nbsp;</span><span class="syntax-unit">7years</span><span class="text-ide-text">;</span>
       </div>
       <div class="code-line">
-        <span class="syntax-variable">$theme</span>:<span class="syntax-value ml-1">dark</span>;
+        <span class="syntax-variable">$theme</span><span class="text-ide-text">:&nbsp;</span><span class="syntax-value">dark</span><span class="text-ide-text">;</span>
       </div>
       <div class="code-line">
-        <span class="syntax-variable">$main-color</span>:<span class="syntax-value ml-1">#4ec9b0</span>;
+        <span class="syntax-variable">$main-color</span><span class="text-ide-text">:&nbsp;</span><span class="syntax-value">#4ec9b0</span><span class="text-ide-text">;</span>
       </div>
       <div class="code-line mb-4"></div>
 
       <!-- Frontend Stack -->
       <div class="code-line">
-        <span class="syntax-selector">.frontend-stack</span> <span class="text-ide-text">{</span>
+        <span class="syntax-selector">.frontend-stack</span>&nbsp;<span class="text-ide-text">{</span>
       </div>
       <div class="code-line">
-        <span class="ml-4 syntax-property">framework</span>: <span class="syntax-value">{{ skills.frontend.framework }}</span>;
+        <span class="ml-4 syntax-property">framework</span><span class="text-ide-text">:&nbsp;</span><span class="syntax-value">{{ skills.frontend.framework }}</span><span class="text-ide-text">;</span>
       </div>
       <div class="code-line">
-        <span class="ml-4 syntax-property">meta-framework</span>: <span class="syntax-value">{{ skills.frontend.metaFramework }}</span>;
+        <span class="ml-4 syntax-property">meta-framework</span><span class="text-ide-text">:&nbsp;</span><span class="syntax-value">{{ skills.frontend.metaFramework }}</span><span class="text-ide-text">;</span>
       </div>
       <div class="code-line">
-        <span class="ml-4 syntax-property">language</span>: <span class="syntax-value">{{ skills.frontend.language }}</span>;
+        <span class="ml-4 syntax-property">language</span><span class="text-ide-text">:&nbsp;</span><span class="syntax-value">{{ skills.frontend.language }}</span><span class="text-ide-text">;</span>
       </div>
       <div class="code-line">
-        <span class="ml-4 syntax-property">styling</span>: <span class="syntax-value">{{ skills.frontend.styling }}</span>;
+        <span class="ml-4 syntax-property">styling</span><span class="text-ide-text">:&nbsp;</span><span class="syntax-value">{{ skills.frontend.styling }}</span><span class="text-ide-text">;</span>
       </div>
       <div class="code-line">
-        <span class="ml-4 syntax-property">state-management</span>: <span class="syntax-value">{{ skills.frontend.stateManagement }}</span>;
+        <span class="ml-4 syntax-property">state-management</span><span class="text-ide-text">:&nbsp;</span><span class="syntax-value">{{ skills.frontend.stateManagement }}</span><span class="text-ide-text">;</span>
       </div>
       <div class="code-line">
-        <span class="ml-4 syntax-keyword">&amp;:hover</span> <span class="text-ide-text">{</span>
+        <span class="ml-4 syntax-keyword">&amp;:hover</span>&nbsp;<span class="text-ide-text">{</span>
       </div>
       <div class="code-line">
-        <span class="ml-8 syntax-property">animation</span>: <span class="syntax-value">high-performance 0.3s ease</span>;
+        <span class="ml-8 syntax-property">animation</span><span class="text-ide-text">:&nbsp;</span><span class="syntax-value">high-performance&nbsp;0.3s&nbsp;ease</span><span class="text-ide-text">;</span>
       </div>
       <div class="code-line">
         <span class="ml-4 text-ide-text">}</span>
@@ -57,19 +57,19 @@ import { skills } from '~/data/portfolio'
 
       <!-- SEO Optimization -->
       <div class="code-line">
-        <span class="syntax-selector">.seo-optimization</span> <span class="text-ide-text">{</span>
+        <span class="syntax-selector">.seo-optimization</span>&nbsp;<span class="text-ide-text">{</span>
       </div>
       <div class="code-line">
-        <span class="ml-4 syntax-property">core-web-vitals</span>: <span class="syntax-unit">{{ skills.seo.coreWebVitals }}</span>;
+        <span class="ml-4 syntax-property">core-web-vitals</span><span class="text-ide-text">:&nbsp;</span><span class="syntax-unit">{{ skills.seo.coreWebVitals }}</span><span class="text-ide-text">;</span>
       </div>
       <div class="code-line">
-        <span class="ml-4 syntax-property">performance-first</span>: <span class="syntax-keyword">true</span>;
+        <span class="ml-4 syntax-property">performance-first</span><span class="text-ide-text">:&nbsp;</span><span class="syntax-keyword">true</span><span class="text-ide-text">;</span>
       </div>
       <div class="code-line">
-        <span class="ml-4 syntax-property">search-console</span>: <span class="syntax-value">mastered</span>;
+        <span class="ml-4 syntax-property">search-console</span><span class="text-ide-text">:&nbsp;</span><span class="syntax-value">mastered</span><span class="text-ide-text">;</span>
       </div>
       <div class="code-line">
-        <span class="ml-4 syntax-property">structured-data</span>: <span class="syntax-function">json-ld()</span>;
+        <span class="ml-4 syntax-property">structured-data</span><span class="text-ide-text">:&nbsp;</span><span class="syntax-function">json-ld()</span><span class="text-ide-text">;</span>
       </div>
       <div class="code-line">
         <span class="text-ide-text">}</span>
@@ -78,19 +78,19 @@ import { skills } from '~/data/portfolio'
 
       <!-- Backend Tools -->
       <div class="code-line">
-        <span class="syntax-selector">.backend-tools</span> <span class="text-ide-text">{</span>
+        <span class="syntax-selector">.backend-tools</span>&nbsp;<span class="text-ide-text">{</span>
       </div>
       <div class="code-line">
-        <span class="ml-4 syntax-property">runtime</span>: <span class="syntax-value">{{ skills.backend.runtime }}</span>;
+        <span class="ml-4 syntax-property">runtime</span><span class="text-ide-text">:&nbsp;</span><span class="syntax-value">{{ skills.backend.runtime }}</span><span class="text-ide-text">;</span>
       </div>
       <div class="code-line">
-        <span class="ml-4 syntax-property">api-architecture</span>: <span class="syntax-value">{{ skills.backend.apiArchitecture }}</span>;
+        <span class="ml-4 syntax-property">api-architecture</span><span class="text-ide-text">:&nbsp;</span><span class="syntax-value">{{ skills.backend.apiArchitecture }}</span><span class="text-ide-text">;</span>
       </div>
       <div class="code-line">
-        <span class="ml-4 syntax-property">version-control</span>: <span class="syntax-function">git(flow)</span>;
+        <span class="ml-4 syntax-property">version-control</span><span class="text-ide-text">:&nbsp;</span><span class="syntax-function">git(flow)</span><span class="text-ide-text">;</span>
       </div>
       <div class="code-line">
-        <span class="ml-4 syntax-property">containerization</span>: <span class="syntax-value">{{ skills.backend.containerization }}</span>;
+        <span class="ml-4 syntax-property">containerization</span><span class="text-ide-text">:&nbsp;</span><span class="syntax-value">{{ skills.backend.containerization }}</span><span class="text-ide-text">;</span>
       </div>
       <div class="code-line">
         <span class="text-ide-text">}</span>

@@ -10,88 +10,85 @@ import { profile, skills } from '~/data/portfolio'
         <span class="text-ide-text">{</span>
       </div>
       <div class="code-line">
-        <span class="ml-2 syntax-property">"name"</span>: <span class="syntax-string">"@vuthanhbay/portfolio"</span>,
+        <span class="ml-2 syntax-property">"name"</span><span class="text-ide-text">:&nbsp;</span><span class="syntax-string">"@vuthanhbay/portfolio"</span><span class="text-ide-text">,</span>
       </div>
       <div class="code-line">
-        <span class="ml-2 syntax-property">"version"</span>: <span class="syntax-string">"7.0.0"</span>,
-      </div>
-<!--      <div class="code-line">-->
-<!--        <span class="ml-2 syntax-property">"description"</span>: <span class=""><span class="syntax-string">"{{ profile.bio }}"</span>,</span>-->
-<!--      </div>-->
-      <div class="code-line">
-        <span class="ml-2 syntax-property">"author"</span>: <span class="text-ide-text">{</span>
+        <span class="ml-2 syntax-property">"version"</span><span class="text-ide-text">:&nbsp;</span><span class="syntax-string">"7.0.0"</span><span class="text-ide-text">,</span>
       </div>
       <div class="code-line">
-        <span class="ml-4 syntax-property">"name"</span>: <span class="syntax-string">"{{ profile.name }}"</span>,
+        <span class="ml-2 syntax-property">"author"</span><span class="text-ide-text">:&nbsp;{</span>
       </div>
       <div class="code-line">
-        <span class="ml-4 syntax-property">"email"</span>: <span class="syntax-string">"{{ profile.email }}"</span>,
+        <span class="ml-4 syntax-property">"name"</span><span class="text-ide-text">:&nbsp;</span><span class="syntax-string">"{{ profile.name }}"</span><span class="text-ide-text">,</span>
       </div>
       <div class="code-line">
-        <span class="ml-4 syntax-property">"url"</span>: <span class="syntax-string">"https://{{ profile.github }}"</span>
+        <span class="ml-4 syntax-property">"email"</span><span class="text-ide-text">:&nbsp;</span><span class="syntax-string">"{{ profile.email }}"</span><span class="text-ide-text">,</span>
       </div>
       <div class="code-line">
-        <span class="ml-2 text-ide-text">}</span>,
+        <span class="ml-4 syntax-property">"url"</span><span class="text-ide-text">:&nbsp;</span><span class="syntax-string">"https://{{ profile.github }}"</span>
       </div>
       <div class="code-line">
-        <span class="ml-2 syntax-property">"keywords"</span>: <span class="text-ide-text">[</span>
+        <span class="ml-2 text-ide-text">},</span>
       </div>
       <div class="code-line">
-        <span class="ml-4 syntax-string">"vue.js"</span>, <span class="syntax-string">"nuxt.js"</span>, <span class="syntax-string">"typescript"</span>,
+        <span class="ml-2 syntax-property">"keywords"</span><span class="text-ide-text">:&nbsp;[</span>
       </div>
       <div class="code-line">
-        <span class="ml-4 syntax-string">"frontend"</span>, <span class="syntax-string">"seo"</span>, <span class="syntax-string">"performance"</span>
+        <span class="ml-4 syntax-string">"vue.js"</span><span class="text-ide-text">,&nbsp;</span><span class="syntax-string">"nuxt.js"</span><span class="text-ide-text">,&nbsp;</span><span class="syntax-string">"typescript"</span><span class="text-ide-text">,</span>
       </div>
       <div class="code-line">
-        <span class="ml-2 text-ide-text">]</span>,
+        <span class="ml-4 syntax-string">"frontend"</span><span class="text-ide-text">,&nbsp;</span><span class="syntax-string">"seo"</span><span class="text-ide-text">,&nbsp;</span><span class="syntax-string">"performance"</span>
       </div>
       <div class="code-line">
-        <span class="ml-2 syntax-property">"dependencies"</span>: <span class="text-ide-text">{</span>
+        <span class="ml-2 text-ide-text">],</span>
       </div>
       <div class="code-line">
-        <span class="ml-4 syntax-property">"vue"</span>: <span class="syntax-string">"^3.4.0"</span>,
+        <span class="ml-2 syntax-property">"dependencies"</span><span class="text-ide-text">:&nbsp;{</span>
       </div>
       <div class="code-line">
-        <span class="ml-4 syntax-property">"nuxt"</span>: <span class="syntax-string">"^3.9.0"</span>,
+        <span class="ml-4 syntax-property">"vue"</span><span class="text-ide-text">:&nbsp;</span><span class="syntax-string">"^3.4.0"</span><span class="text-ide-text">,</span>
       </div>
       <div class="code-line">
-        <span class="ml-4 syntax-property">"typescript"</span>: <span class="syntax-string">"^5.3.0"</span>,
+        <span class="ml-4 syntax-property">"nuxt"</span><span class="text-ide-text">:&nbsp;</span><span class="syntax-string">"^3.9.0"</span><span class="text-ide-text">,</span>
       </div>
       <div class="code-line">
-        <span class="ml-4 syntax-property">"tailwindcss"</span>: <span class="syntax-string">"^3.4.0"</span>,
+        <span class="ml-4 syntax-property">"typescript"</span><span class="text-ide-text">:&nbsp;</span><span class="syntax-string">"^5.3.0"</span><span class="text-ide-text">,</span>
       </div>
       <div class="code-line">
-        <span class="ml-4 syntax-property">"pinia"</span>: <span class="syntax-string">"^2.1.0"</span>
+        <span class="ml-4 syntax-property">"tailwindcss"</span><span class="text-ide-text">:&nbsp;</span><span class="syntax-string">"^3.4.0"</span><span class="text-ide-text">,</span>
       </div>
       <div class="code-line">
-        <span class="ml-2 text-ide-text">}</span>,
+        <span class="ml-4 syntax-property">"pinia"</span><span class="text-ide-text">:&nbsp;</span><span class="syntax-string">"^2.1.0"</span>
       </div>
       <div class="code-line">
-        <span class="ml-2 syntax-property">"devDependencies"</span>: <span class="text-ide-text">{</span>
+        <span class="ml-2 text-ide-text">},</span>
       </div>
       <div class="code-line">
-        <span class="ml-4 syntax-property">"vitest"</span>: <span class="syntax-string">"^1.2.0"</span>,
+        <span class="ml-2 syntax-property">"devDependencies"</span><span class="text-ide-text">:&nbsp;{</span>
       </div>
       <div class="code-line">
-        <span class="ml-4 syntax-property">"eslint"</span>: <span class="syntax-string">"^8.56.0"</span>,
+        <span class="ml-4 syntax-property">"vitest"</span><span class="text-ide-text">:&nbsp;</span><span class="syntax-string">"^1.2.0"</span><span class="text-ide-text">,</span>
       </div>
       <div class="code-line">
-        <span class="ml-4 syntax-property">"prettier"</span>: <span class="syntax-string">"^3.2.0"</span>
+        <span class="ml-4 syntax-property">"eslint"</span><span class="text-ide-text">:&nbsp;</span><span class="syntax-string">"^8.56.0"</span><span class="text-ide-text">,</span>
       </div>
       <div class="code-line">
-        <span class="ml-2 text-ide-text">}</span>,
+        <span class="ml-4 syntax-property">"prettier"</span><span class="text-ide-text">:&nbsp;</span><span class="syntax-string">"^3.2.0"</span>
       </div>
       <div class="code-line">
-        <span class="ml-2 syntax-property">"engines"</span>: <span class="text-ide-text">{</span>
+        <span class="ml-2 text-ide-text">},</span>
       </div>
       <div class="code-line">
-        <span class="ml-4 syntax-property">"node"</span>: <span class="syntax-string">">=18.0.0"</span>
+        <span class="ml-2 syntax-property">"engines"</span><span class="text-ide-text">:&nbsp;{</span>
       </div>
       <div class="code-line">
-        <span class="ml-2 text-ide-text">}</span>,
+        <span class="ml-4 syntax-property">"node"</span><span class="text-ide-text">:&nbsp;</span><span class="syntax-string">">=18.0.0"</span>
       </div>
       <div class="code-line">
-        <span class="ml-2 syntax-property">"license"</span>: <span class="syntax-string">"MIT"</span>
+        <span class="ml-2 text-ide-text">},</span>
+      </div>
+      <div class="code-line">
+        <span class="ml-2 syntax-property">"license"</span><span class="text-ide-text">:&nbsp;</span><span class="syntax-string">"MIT"</span>
       </div>
       <div class="code-line">
         <span class="text-ide-text">}</span>
