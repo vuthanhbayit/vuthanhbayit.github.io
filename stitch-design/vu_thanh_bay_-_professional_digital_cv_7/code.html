@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Portfolio Home Dashboard - IDE View</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&amp;family=Inter:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        ide: {
+                            bg: "#1e1e1e",
+                            sidebar: "#252526",
+                            activity: "#333333",
+                            tab: "#1e1e1e",
+                            tabActive: "#1e1e1e",
+                            border: "#3e3e42",
+                            text: "#cccccc",
+                            keyword: "#569cd6",
+                            string: "#ce9178",
+                            function: "#dcdcaa",
+                            variable: "#9cdcfe",
+                            comment: "#6a9955",
+                            number: "#b5cea8",
+                            cyan: "#4ec9b0",
+                            accent: "#007acc"
+                        },
+                        blueprint: {
+                            grid: "rgba(78, 201, 176, 0.05)"
+                        }
+                    },
+                    fontFamily: {
+                        mono: ["JetBrains Mono", "monospace"],
+                        sans: ["Inter", "sans-serif"],
+                    },
+                    animation: {
+                        'spin-slow': 'spin 15s linear infinite',
+                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'float': 'float 6s ease-in-out infinite',
+                        'scan': 'scan 4s linear infinite',
+                        'glow-pulse': 'glowPulse 2s ease-in-out infinite',
+                        'type-line': 'typeLine 0.4s ease-out forwards',
+                        'cursor-blink': 'cursorBlink 1s step-end infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        },
+                        scan: {
+                            '0%': { transform: 'rotate(0deg)' },
+                            '100%': { transform: 'rotate(360deg)' },
+                        },
+                        glowPulse: {
+                            '0%, 100%': { opacity: '0.2' },
+                            '50%': { opacity: '0.8' },
+                        },
+                        typeLine: {
+                            '0%': { opacity: '0', transform: 'translateY(8px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        cursorBlink: {
+                            '0%, 100%': { opacity: '1' },
+                            '50%': { opacity: '0' },
+                        }
+                    }
+                },
+            },
+        };
+    </script>
+<style type="text/tailwindcss">
+        body {
+            @apply bg-ide-bg text-ide-text font-sans overflow-hidden;
+        }
+        .blueprint-grid {
+            background-image: 
+                linear-gradient(var(--tw-colors-blueprint-grid) 1px, transparent 1px),
+                linear-gradient(90deg, var(--tw-colors-blueprint-grid) 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
+        .scrollbar-thin::-webkit-scrollbar {
+            width: 8px;
+        }
+        .scrollbar-thin::-webkit-scrollbar-track {
+            background: #1e1e1e; 
+        }
+        .scrollbar-thin::-webkit-scrollbar-thumb {
+            background: #424242; 
+        }
+        .scrollbar-thin::-webkit-scrollbar-thumb:hover {
+            background: #4f4f4f; 
+        }
+        .perspective-3d {
+            perspective: 1000px;
+        }
+        .rotate-3d {
+            transform-style: preserve-3d;
+            animation: rotate3d 20s linear infinite;
+        }
+        @keyframes rotate3d {
+            from { transform: rotateX(20deg) rotateY(0deg); }
+            to { transform: rotateX(20deg) rotateY(360deg); }
+        }
+        .cube-face {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            border: 1px solid rgba(78, 201, 176, 0.4);
+            background: rgba(78, 201, 176, 0.05);
+            box-shadow: 0 0 15px rgba(78, 201, 176, 0.1);
+        }.group:hover .rotate-3d {
+            animation-duration: 4s;
+        }
+        .cube-face::before, .cube-face::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border: 2px solid transparent;
+            opacity: 0;
+            pointer-events: none;
+        }
+        .group:hover .cube-face {
+            border-color: rgba(255, 255, 255, 0.5);
+            background: rgba(16, 185, 129, 0.05);
+            box-shadow: 0 0 20px rgba(16, 185, 129, 0.3);
+            transition: all 0.2s ease;
+        }
+        .group:hover .cube-face::before {
+            border-color: #ef4444;
+            animation: glitch-red 0.1s cubic-bezier(.25, .46, .45, .94) both infinite;
+            opacity: 0.8;
+        }
+        .group:hover .cube-face::after {
+            border-color: #06b6d4;
+            animation: glitch-cyan 0.1s cubic-bezier(.25, .46, .45, .94) both infinite reverse;
+            opacity: 0.8;
+        }
+        @keyframes glitch-red {
+            0% { transform: translate(0); }
+            20% { transform: translate(-3px, 3px); }
+            40% { transform: translate(-3px, -3px); }
+            60% { transform: translate(3px, 3px); }
+            80% { transform: translate(3px, -3px); }
+            100% { transform: translate(0); }
+        }
+        @keyframes glitch-cyan {
+            0% { transform: translate(0); }
+            20% { transform: translate(3px, -3px); }
+            40% { transform: translate(3px, 3px); }
+            60% { transform: translate(-3px, -3px); }
+            80% { transform: translate(-3px, 3px); }
+            100% { transform: translate(0); }
+        }
+        @keyframes pulse-emerald {
+            0% { transform: translate(-50%, -50%) scale(0.5); opacity: 0.8; }
+            100% { transform: translate(-50%, -50%) scale(3); opacity: 0; }
+        }
+        .emerald-pulse {
+            animation: pulse-emerald 1.2s ease-out infinite;
+        }
+        @keyframes noise-flicker {
+            0%, 100% { opacity: 0; transform: scaleX(0.1); }
+            5%, 25% { opacity: 1; transform: scaleX(1); }
+            30%, 60% { opacity: 0; transform: scaleX(0.5); }
+            65%, 80% { opacity: 0.8; transform: scaleX(0.8) translateX(10px); }
+            90% { opacity: 0; }
+        }
+        .noise-line {
+            animation: noise-flicker 0.4s infinite;
+        }
+    </style>
+</head>
+<body class="flex flex-col h-screen text-sm">
+<header class="h-8 bg-ide-activity flex items-center justify-between px-3 select-none text-xs border-b border-ide-border">
+<div class="flex items-center gap-4">
+<div class="flex gap-2">
+<div class="w-3 h-3 rounded-full bg-[#ff5f56]"></div>
+<div class="w-3 h-3 rounded-full bg-[#ffbd2e]"></div>
+<div class="w-3 h-3 rounded-full bg-[#27c93f]"></div>
+</div>
+<div class="text-ide-text opacity-70">vu-thanh-bay-portfolio - Visual Studio Code</div>
+</div>
+<div class="flex items-center gap-4 text-ide-text opacity-60">
+<span class="hidden sm:inline">Ln 0, Col 0</span>
+<span class="hidden sm:inline">UTF-8</span>
+<span>Plain Text</span>
+</div>
+</header>
+<div class="flex flex-1 overflow-hidden">
+<aside class="w-12 bg-ide-activity flex flex-col items-center py-2 gap-4 border-r border-ide-border z-20">
+<div class="p-2 border-l-2 border-ide-text opacity-100 cursor-pointer">
+<span class="material-symbols-outlined text-2xl text-ide-text">folder_open</span>
+</div>
+<div class="p-2 border-l-2 border-transparent opacity-50 hover:opacity-100 cursor-pointer">
+<span class="material-symbols-outlined text-2xl text-ide-text">search</span>
+</div>
+<div class="p-2 border-l-2 border-transparent opacity-50 hover:opacity-100 cursor-pointer">
+<span class="material-symbols-outlined text-2xl text-ide-text">hub</span>
+</div>
+<div class="p-2 border-l-2 border-transparent opacity-50 hover:opacity-100 cursor-pointer">
+<span class="material-symbols-outlined text-2xl text-ide-text">bug_report</span>
+</div>
+<div class="p-2 border-l-2 border-transparent opacity-50 hover:opacity-100 cursor-pointer">
+<span class="material-symbols-outlined text-2xl text-ide-text">extension</span>
+</div>
+<div class="mt-auto p-2 border-l-2 border-transparent opacity-50 hover:opacity-100 cursor-pointer">
+<span class="material-symbols-outlined text-2xl text-ide-text">settings</span>
+</div>
+</aside>
+<aside class="w-64 bg-ide-sidebar flex flex-col border-r border-ide-border hidden md:flex font-sans text-xs select-none">
+<div class="h-8 px-4 flex items-center text-xs font-bold uppercase tracking-wider text-ide-text opacity-60">Explorer</div>
+<div class="mt-2 flex-1 overflow-y-auto scrollbar-thin">
+<div class="px-2 py-1 flex items-center gap-1 hover:bg-ide-activity cursor-pointer font-bold text-ide-text">
+<span class="material-symbols-outlined text-base">expand_more</span>
+<span class="uppercase">PORTFOLIO-PROJECT</span>
+</div>
+<div class="pl-4">
+<div class="px-2 py-1 flex items-center gap-1 hover:bg-ide-activity cursor-pointer text-ide-text">
+<span class="material-symbols-outlined text-base text-gray-500">expand_more</span>
+<span class="material-symbols-outlined text-base text-orange-400">folder</span>
+<span>src</span>
+</div>
+<div class="pl-4 border-l border-ide-border ml-3">
+<div class="px-2 py-1 flex items-center gap-1 hover:bg-ide-activity cursor-pointer text-ide-text">
+<span class="material-symbols-outlined text-base text-gray-500">expand_more</span>
+<span class="material-symbols-outlined text-base text-orange-400">folder</span>
+<span>views</span>
+</div>
+<div class="pl-4 border-l border-ide-border ml-3">
+<div class="px-2 py-1 flex items-center gap-2 hover:bg-ide-activity cursor-pointer text-ide-text">
+<i class="fab fa-vuejs text-green-500"></i>
+<span class="text-ide-text">Home.vue</span>
+</div>
+<div class="px-2 py-1 flex items-center gap-2 hover:bg-ide-activity cursor-pointer text-ide-text">
+<i class="fab fa-vuejs text-green-500"></i>
+<span>About.vue</span>
+</div>
+</div>
+<div class="px-2 py-1 flex items-center gap-1 hover:bg-ide-activity cursor-pointer text-ide-text mt-1">
+<span class="material-symbols-outlined text-base text-gray-500">chevron_right</span>
+<span class="material-symbols-outlined text-base text-purple-400">folder</span>
+<span>components</span>
+</div>
+<div class="px-2 py-1 flex items-center gap-2 hover:bg-ide-activity cursor-pointer text-ide-text mt-1">
+<i class="fab fa-js text-yellow-400"></i>
+<span>Experience.ts</span>
+</div>
+<div class="px-2 py-1 flex items-center gap-2 hover:bg-ide-activity cursor-pointer text-ide-text">
+<i class="fab fa-css3-alt text-blue-400"></i>
+<span>Skills.css</span>
+</div>
+</div>
+<div class="px-2 py-1 flex items-center gap-1 hover:bg-ide-activity cursor-pointer text-ide-text mt-1">
+<span class="material-symbols-outlined text-base text-gray-500">chevron_right</span>
+<span class="material-symbols-outlined text-base text-green-400">folder</span>
+<span>assets</span>
+</div>
+<div class="px-2 py-1 flex items-center gap-2 hover:bg-ide-activity cursor-pointer text-ide-text ml-4">
+<i class="fas fa-file-code text-red-400"></i>
+<span>package.json</span>
+</div>
+<div class="px-2 py-1 flex items-center gap-2 hover:bg-ide-activity cursor-pointer text-ide-text ml-4">
+<i class="fas fa-cog text-gray-400"></i>
+<span>.env.local</span>
+</div>
+<div class="px-2 py-1 flex items-center gap-2 hover:bg-ide-activity cursor-pointer text-ide-text ml-4">
+<i class="fab fa-markdown text-blue-300"></i>
+<span>README.md</span>
+</div>
+</div>
+</div>
+<div class="p-4 border-t border-ide-border">
+<div class="flex items-center gap-2 mb-2 text-ide-text opacity-60 font-bold uppercase text-[10px]">Timeline</div>
+<div class="h-24 relative opacity-40">
+<div class="absolute inset-0 bg-gradient-to-t from-ide-sidebar to-transparent z-10"></div>
+<div class="absolute left-2 top-0 bottom-0 w-0.5 bg-ide-border"></div>
+<div class="absolute left-1 top-2 w-2.5 h-2.5 rounded-full bg-ide-cyan"></div>
+<div class="absolute left-1 top-10 w-2.5 h-2.5 rounded-full bg-ide-comment"></div>
+<div class="absolute left-1 top-18 w-2.5 h-2.5 rounded-full bg-ide-variable"></div>
+</div>
+</div>
+</aside>
+<main class="flex-1 flex flex-col bg-ide-bg relative blueprint-grid overflow-hidden">
+<div class="flex h-9 bg-ide-tab border-b border-ide-border overflow-x-auto scrollbar-hide">
+<div class="flex-1 bg-[#1e1e1e]"></div>
+</div>
+<div class="h-6 flex items-center px-4 gap-1 text-xs text-ide-text opacity-60 border-b border-ide-border bg-ide-bg">
+<span>No file selected</span>
+</div>
+<div class="flex-1 overflow-hidden relative flex flex-col items-center justify-center p-6 font-sans">
+<div class="perspective-3d w-48 h-48 mb-8 relative flex items-center justify-center group cursor-pointer">
+<div class="absolute top-1/2 left-1/2 w-20 h-20 -translate-x-1/2 -translate-y-1/2 rounded-full bg-emerald-500/40 blur-lg opacity-0 group-hover:block emerald-pulse pointer-events-none hidden"></div>
+<div class="absolute inset-0 overflow-hidden pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity">
+<div class="noise-line absolute top-[20%] left-0 w-full h-[1px] bg-emerald-400/60"></div>
+<div class="noise-line absolute top-[40%] left-0 w-full h-[2px] bg-red-400/60" style="animation-delay: 0.1s; width: 80%;"></div>
+<div class="noise-line absolute top-[60%] left-[20%] w-[60%] h-[1px] bg-cyan-400/60" style="animation-delay: 0.2s"></div>
+<div class="noise-line absolute top-[85%] left-0 w-full h-[3px] bg-white/30" style="animation-delay: 0.05s"></div>
+</div>
+<div class="w-32 h-32 relative rotate-3d">
+<div class="cube-face transform translate-z-[50px]"></div>
+<div class="cube-face transform rotate-y-90 translate-z-[50px]"></div>
+<div class="cube-face transform rotate-y-180 translate-z-[50px]"></div>
+<div class="cube-face transform rotate-y--90 translate-z-[50px]"></div>
+<div class="cube-face transform rotate-x-90 translate-z-[50px]"></div>
+<div class="cube-face transform rotate-x--90 translate-z-[50px]"></div>
+<div class="absolute inset-0 flex items-center justify-center transform rotate-x-[-20deg]">
+<i class="fas fa-code text-6xl text-ide-cyan opacity-80 animate-pulse-slow group-hover:text-emerald-400 transition-colors"></i>
+</div>
+</div>
+<div class="absolute -bottom-10 left-1/2 -translate-x-1/2 w-48 h-12 bg-ide-cyan/10 blur-xl rounded-full group-hover:bg-emerald-500/20 transition-colors duration-500"></div>
+</div>
+<div class="max-w-md w-full space-y-6 z-10">
+<div class="grid gap-3">
+<div class="flex items-center justify-between text-ide-text/60 group cursor-pointer hover:bg-white/5 p-2 rounded-lg transition-colors">
+<span class="text-sm">Show All Commands</span>
+<div class="flex gap-1">
+<kbd class="px-2 py-1 bg-white/10 rounded text-xs font-mono text-ide-text group-hover:bg-white/20 transition-colors">Cmd</kbd>
+<span class="text-xs self-center">+</span>
+<kbd class="px-2 py-1 bg-white/10 rounded text-xs font-mono text-ide-text group-hover:bg-white/20 transition-colors">Shift</kbd>
+<span class="text-xs self-center">+</span>
+<kbd class="px-2 py-1 bg-white/10 rounded text-xs font-mono text-ide-text group-hover:bg-white/20 transition-colors">P</kbd>
+</div>
+</div>
+<div class="flex items-center justify-between text-ide-text/60 group cursor-pointer hover:bg-white/5 p-2 rounded-lg transition-colors">
+<span class="text-sm">Go to File</span>
+<div class="flex gap-1">
+<kbd class="px-2 py-1 bg-white/10 rounded text-xs font-mono text-ide-text group-hover:bg-white/20 transition-colors">Cmd</kbd>
+<span class="text-xs self-center">+</span>
+<kbd class="px-2 py-1 bg-white/10 rounded text-xs font-mono text-ide-text group-hover:bg-white/20 transition-colors">P</kbd>
+</div>
+</div>
+<div class="flex items-center justify-between text-ide-text/60 group cursor-pointer hover:bg-white/5 p-2 rounded-lg transition-colors">
+<span class="text-sm">Search Skills</span>
+<div class="flex gap-1">
+<kbd class="px-2 py-1 bg-white/10 rounded text-xs font-mono text-ide-text group-hover:bg-white/20 transition-colors">Cmd</kbd>
+<span class="text-xs self-center">+</span>
+<kbd class="px-2 py-1 bg-white/10 rounded text-xs font-mono text-ide-text group-hover:bg-white/20 transition-colors">Shift</kbd>
+<span class="text-xs self-center">+</span>
+<kbd class="px-2 py-1 bg-white/10 rounded text-xs font-mono text-ide-text group-hover:bg-white/20 transition-colors">F</kbd>
+</div>
+</div>
+</div>
+<div class="text-center">
+<p class="text-ide-text/40 text-xs italic">Select a file from the explorer to view details</p>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>
