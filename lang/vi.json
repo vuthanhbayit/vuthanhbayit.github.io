@@ -1,0 +1,153 @@
+{
+  "meta": {
+    "lang": "vi",
+    "ogLocale": "vi_VN",
+    "numberLocale": "vi-VN",
+    "phoneIntl": false,
+    "title": "Vũ Thanh Bảy — Senior Frontend Engineer",
+    "description": "Gần 8 năm làm giao diện web với Vue / Nuxt. Dẫn dắt xây nền tảng bán lẻ đa site cùng AI: 1.060 PR đã gộp, kết nối hơn 15 dịch vụ.",
+    "ogDescription": "Gần 8 năm làm giao diện web với Vue / Nuxt. Dẫn dắt xây nền tảng bán lẻ đa site cùng AI."
+  },
+  "brand": {
+    "name": "Vũ Thanh Bảy"
+  },
+  "cv": {
+    "file": "Vu-Thanh-Bay-CV.pdf",
+    "download": "↓ Tải CV (PDF)"
+  },
+  "nav": {
+    "experience": "Kinh nghiệm",
+    "projects": "Dự án",
+    "openSource": "Mã nguồn mở",
+    "contact": "Liên hệ",
+    "downloadCv": "↓ Tải CV",
+    "language": "Ngôn ngữ"
+  },
+  "hero": {
+    "pill": "Đang tìm vị trí Frontend / Fullstack",
+    "pillLink": "Liên hệ ↗",
+    "title": "Xin chào, tôi là Bảy.",
+    "lead": "Gần 8 năm làm giao diện web với Vue / Nuxt. Giờ tôi dẫn dắt xây cả một nền tảng bán lẻ — cùng AI, và tôi là người cầm lái.",
+    "trustPrs": "✓ <b>1.060</b> PR đã gộp",
+    "trustNpm": "✓ <b>31</b> gói npm"
+  },
+  "glance": {
+    "eyebrow": "Tóm tắt nhanh",
+    "title": "Làm giao diện, hiểu nghiệp vụ, cầm lái AI.",
+    "statYears": "Năm làm Vue / Nuxt",
+    "statPrs": "PR đã gộp vào nền tảng mới",
+    "statPrsValue": "1.060",
+    "statServices": "Dịch vụ ngoài đã kết nối",
+    "s1Title": "Giao diện",
+    "s1Text": "Storefront thinkpro.vn bản V4 đạt điểm tuyệt đối về tốc độ, trên cả điện thoại lẫn máy tính.",
+    "s1Cmd": "$ lighthouse thinkpro.vn   # bản V4",
+    "s1Speed": "▸ tốc độ ....",
+    "s1SpeedNote": "điện thoại + máy tính",
+    "s2Title": "Nghiệp vụ",
+    "s2Text": "Đơn hàng, kho, bảo hành, sàn, vận chuyển — tôi là tác giả phần lớn nền tảng bán lẻ mới.",
+    "s2Note": "# ~72% trên 1.482 PR của dự án",
+    "s3Title": "Cầm lái AI",
+    "s3Text": "AI viết code theo luật tôi đặt. Tôi quyết kiến trúc, nghiệp vụ và rà soát trước khi gộp.",
+    "s3Cmd": "$ claude \"thêm đối soát tiền thu hộ GHN\"",
+    "s3Line1": "▸ đọc code thật trước khi sửa",
+    "s3Line2": "▸ hook chặn lệnh nguy hiểm ..",
+    "s3Line3": "▸ tôi rà soát rồi mới gộp ..."
+  },
+  "exp": {
+    "eyebrow": "Kinh nghiệm · Thinkpro",
+    "title": "Tám năm Frontend.<br /><em>Một năm cầm lái cả hệ thống.</em>",
+    "feTitle": "Storefront thinkpro.vn",
+    "feText": "Xây qua 2 thế hệ, Nuxt 2 rồi Nuxt 3, tự viết khoảng 3/4 số code.",
+    "gaugeSpeed": "Tốc độ",
+    "gaugeNote": "Lighthouse · bản V4",
+    "feCheck1": "Điểm tốc độ <b>100/100</b> trên cả điện thoại lẫn máy tính",
+    "feCheck2": "SEO kỹ thuật cùng đội marketing: dữ liệu có cấu trúc, sitemap, Merchant Center",
+    "feCheck3": "CMS nội bộ, storefront GoodSpace, giao diện cho nice.design",
+    "leadRole": "Kỹ sư dẫn dắt nền tảng mới",
+    "leadWhen": "02/2026 — nay",
+    "leadTitle": "Nền tảng bán lẻ đa site",
+    "leadText": "Thay hệ cũ Laravel / MySQL bằng một bộ code Nuxt 4 phục vụ 4 site và 1 CMS.",
+    "flowOrder": "Đơn hàng",
+    "flowFulfillment": "Xuất kho",
+    "flowShipping": "Giao vận",
+    "flowInvoice": "Hoá đơn",
+    "flowNote": "Chạy thật từ 19/08/2026",
+    "leadCheck1": "Tác giả <b>1.060 / 1.482</b> PR đã gộp, hơn <b>260</b> bảng dữ liệu",
+    "leadCheck2": "Kết nối <b>15+</b> dịch vụ: sàn, vận chuyển, thanh toán, kế toán",
+    "leadCheck3": "Tự làm phần chuyển toàn bộ dữ liệu từ hệ cũ sang",
+    "azoomName": "Azoom Việt Nam",
+    "azoomText": "CMS vận hành Azoom.jp, giảm chi phí gọi Google API cho carparking.jp",
+    "amelaText": "Base CMS dùng lại cho nhiều dự án outsource",
+    "abaText": "Thực tập — CMS nghiệp vụ kế toán"
+  },
+  "gather": {
+    "label": "1.060 PR đã gộp",
+    "caption": "<b>PR đã gộp vào nền tảng mới</b> — khoảng 72% của cả dự án, trong 9 tháng."
+  },
+  "projects": {
+    "eyebrow": "Dự án & tác động",
+    "title": "Việc tôi làm, đổi được gì.",
+    "p1Hub": "1 bộ code · Nuxt 4",
+    "p1Tag": "Nền tảng",
+    "p1Title": "Bốn site, một bộ code",
+    "p1Text": "Bốn thương hiệu dùng chung một nền tảng và một trang quản trị, thay vì mỗi site một hệ riêng.",
+    "p2Speed": "Tốc độ · V4",
+    "p2Title": "thinkpro.vn điểm tuyệt đối",
+    "p2Text": "Tối ưu ảnh, font, bố cục và độ nhạy thao tác theo từng trang; đo tốc độ từ chính khách thật.",
+    "p3Bar1": "Bộ lọc sản phẩm <b>nhanh hơn ~40%</b>",
+    "p3Bar2": "Kiểm tra tự động trên CI <b>nhanh hơn gấp đôi</b>",
+    "p3Tag": "Hiệu năng",
+    "p3Title": "Tìm đúng chỗ chậm rồi xử lý",
+    "p3Text": "Thanh xám là trước, thanh màu là sau. Khách thao tác nhanh hơn, đội dev chờ ít hơn.",
+    "p4Row1": "đồng bộ đơn, tồn",
+    "p4Row2": "vận đơn, tiền thu hộ",
+    "p4Row3Name": "SePay · VietQR · sao kê",
+    "p4Row3": "tiền về tự khớp",
+    "p4Tag": "Tích hợp",
+    "p4Title": "Hơn 15 dịch vụ ngoài",
+    "p4Text": "Sàn, vận chuyển, thanh toán, Zalo, Lark, MISA — và đối soát tự động cho phòng kế toán.",
+    "p5Col1": "Luật dự án",
+    "p5Col2": "Hook chặn",
+    "p5Col3": "9 skill",
+    "p5Col4": "9 agent",
+    "p5Hub": "Tôi rà soát",
+    "p5Tag": "Cách làm việc",
+    "p5Title": "Quy trình làm việc cùng AI",
+    "p5Text": "AI phải đọc code thật trước khi sửa, thao tác nguy hiểm bị chặn tự động, cả nhóm dùng chung.",
+    "p6Row1": "giảm gọi Google API",
+    "p6Row2": "dùng lại nhiều dự án",
+    "p6Row3Name": "CMS kế toán · ABA",
+    "p6Row3": "dữ liệu, báo cáo",
+    "p6Tag": "Trước Thinkpro",
+    "p6Title": "Ba chặng đầu nghề",
+    "p6Text": "Sản phẩm Nhật, dự án outsource, phần mềm kế toán — nền để hiểu nhiều kiểu nghiệp vụ."
+  },
+  "oss": {
+    "eyebrow": "Mã nguồn mở",
+    "title": "Những thứ tôi chia sẻ.",
+    "statPackages": "Gói npm đã xuất bản",
+    "statDownloads": "Lượt tải 12 tháng qua",
+    "statAccount": "Tài khoản npm"
+  },
+  "skills": {
+    "eyebrow": "Kỹ năng",
+    "title": "Ghi đúng mức mình làm được.",
+    "proficient": "Thành thạo",
+    "proficientNote": "tự làm, tự chịu trách nhiệm",
+    "withAi": "Xây cùng AI",
+    "withAiNote": "tôi thiết kế, quyết định, rà soát",
+    "aiWork": "Làm việc với AI",
+    "aiWorkNote": "công cụ hằng ngày",
+    "tagSeo": "SEO kỹ thuật",
+    "tagRules": "Viết luật & hook cho AI"
+  },
+  "contact": {
+    "eyebrow": "Liên hệ",
+    "title": "Cùng làm điều gì đó chạy thật nhé.",
+    "text": "Đang tìm vị trí Frontend / Fullstack tại công ty sản phẩm, ở Hà Nội.",
+    "showPhone": "Hiện số điện thoại"
+  },
+  "footer": {
+    "text": "© 2026 Vũ Thanh Bảy · Hà Nội"
+  }
+}

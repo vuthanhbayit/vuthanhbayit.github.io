@@ -1,2 +1,3 @@
 User-agent: *
 Disallow: /Vu-Thanh-Bay-CV.pdf
+Disallow: /Vu-Thanh-Bay-CV-EN.pdf

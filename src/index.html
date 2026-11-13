@@ -1,15 +1,17 @@
 <!doctype html>
-<html lang="vi">
+<html lang="{{meta.lang}}">
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Vũ Thanh Bảy — Senior Frontend Engineer</title>
-<meta name="description" content="Gần 8 năm làm giao diện web với Vue / Nuxt. Dẫn dắt xây nền tảng bán lẻ đa site cùng AI: 1.060 PR đã gộp, kết nối hơn 15 dịch vụ." />
-<link rel="canonical" href="https://vuthanhbayit.github.io/" />
+<title>{{meta.title}}</title>
+<meta name="description" content="{{meta.description}}" />
+<link rel="canonical" href="{{page.url}}" />
+{{page.hreflang}}
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://vuthanhbayit.github.io/" />
-<meta property="og:title" content="Vũ Thanh Bảy — Senior Frontend Engineer" />
-<meta property="og:description" content="Gần 8 năm làm giao diện web với Vue / Nuxt. Dẫn dắt xây nền tảng bán lẻ đa site cùng AI." />
+<meta property="og:locale" content="{{meta.ogLocale}}" />
+<meta property="og:url" content="{{page.url}}" />
+<meta property="og:title" content="{{meta.title}}" />
+<meta property="og:description" content="{{meta.ogDescription}}" />
 <meta name="theme-color" content="#f3f1e9" />
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%2320211c'/%3E%3Ctext x='16' y='22' font-family='Arial,sans-serif' font-size='17' font-weight='700' text-anchor='middle' fill='%23f3f1e9'%3EB%3C/text%3E%3C/svg%3E" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -46,6 +48,10 @@
   .nav { display: flex; align-items: center; gap: 6px; }
   .nav a.link { font-size: 12.8px; color: var(--muted); padding: 8px 12px; border-radius: 999px; transition: color .2s, background .2s; }
   .nav a.link:hover { color: var(--ink); background: var(--canvas-alt); }
+  .lang { display: inline-flex; align-items: center; height: 34px; padding: 3px; margin: 0 4px; border: 1px solid var(--line); border-radius: 999px; font: 500 11.5px/1 var(--ui); letter-spacing: .06em; }
+  .lang a, .lang span { display: grid; place-items: center; height: 100%; padding: 0 9px; border-radius: 999px; color: var(--muted); transition: color .2s, background .2s; }
+  .lang a:hover { color: var(--ink); background: var(--canvas-alt); }
+  .lang .on { background: var(--ink); color: var(--canvas); }
   #bar { position: absolute; left: 0; bottom: -1px; height: 2px; width: 0; background: var(--accent-strong); }
 
   .btn { display: inline-flex; align-items: center; gap: 8px; height: 44px; padding: 0 20px; border-radius: 999px; font: 500 14px/1 var(--ui); letter-spacing: .01em; border: 1px solid var(--line); transition: transform .25s var(--ease), background .2s, border-color .2s; cursor: pointer; white-space: nowrap; }
@@ -233,14 +239,15 @@
 
 <header>
   <div class="wrap">
-    <a class="brand" href="#top"><i>B</i><span><b>Vũ Thanh Bảy</b><small>Senior Frontend Engineer</small></span></a>
+    <a class="brand" href="#top"><i>B</i><span><b>{{brand.name}}</b><small>Senior Frontend Engineer</small></span></a>
     <nav class="nav">
-      <a class="link" href="#kinh-nghiem">Kinh nghiệm</a>
-      <a class="link" href="#du-an">Dự án</a>
-      <a class="link" href="#ma-nguon-mo">Mã nguồn mở</a>
-      <a class="link" href="#lien-he">Liên hệ</a>
+      <a class="link" href="#experience">{{nav.experience}}</a>
+      <a class="link" href="#projects">{{nav.projects}}</a>
+      <a class="link" href="#open-source">{{nav.openSource}}</a>
+      <a class="link" href="#contact">{{nav.contact}}</a>
+      <div class="lang" role="group" aria-label="{{nav.language}}">{{page.langItems}}</div>
       <a class="btn sm" href="https://github.com/vuthanhbayit" target="_blank" rel="noopener">GitHub ↗</a>
-      <a class="btn sm dark" href="Vu-Thanh-Bay-CV.pdf" download>↓ Tải CV</a>
+      <a class="btn sm dark" href="{{page.base}}{{cv.file}}" download>{{nav.downloadCv}}</a>
     </nav>
   </div>
   <div id="bar"></div>
@@ -248,161 +255,161 @@
 
 <main id="top">
   <div class="hero wrap">
-    <span class="pill reveal">Đang tìm vị trí Frontend / Fullstack <a href="#lien-he">Liên hệ ↗</a></span>
-    <h1 class="reveal" style="--rd:.08s">Xin chào, tôi là Bảy.</h1>
-    <p class="lead reveal" style="--rd:.16s">Gần 8 năm làm giao diện web với Vue / Nuxt. Giờ tôi dẫn dắt xây cả một nền tảng bán lẻ — cùng AI, và tôi là người cầm lái.</p>
+    <span class="pill reveal">{{hero.pill}} <a href="#contact">{{hero.pillLink}}</a></span>
+    <h1 class="reveal" style="--rd:.08s">{{hero.title}}</h1>
+    <p class="lead reveal" style="--rd:.16s">{{hero.lead}}</p>
     <div class="cta reveal" style="--rd:.24s">
-      <a class="btn primary" href="Vu-Thanh-Bay-CV.pdf" download>↓ Tải CV (PDF)</a>
+      <a class="btn primary" href="{{page.base}}{{cv.file}}" download>{{cv.download}}</a>
       <a class="btn" href="https://github.com/vuthanhbayit" target="_blank" rel="noopener">GitHub ↗</a>
     </div>
     <div class="trust reveal" style="--rd:.32s">
-      <span>✓ <b>1.060</b> PR đã gộp</span><span>✓ Lighthouse <b>100/100</b></span><span>✓ <b>31</b> gói npm</span>
+      <span>{{hero.trustPrs}}</span><span>✓ Lighthouse <b>100/100</b></span><span>{{hero.trustNpm}}</span>
     </div>
   </div>
 
   <section>
     <div class="wrap">
-      <div class="eyebrow reveal">Tóm tắt nhanh</div>
-      <h2 class="reveal">Làm giao diện, hiểu nghiệp vụ, cầm lái AI.</h2>
+      <div class="eyebrow reveal">{{glance.eyebrow}}</div>
+      <h2 class="reveal">{{glance.title}}</h2>
       <div class="panel reveal">
         <div class="statrow">
-          <div>Năm làm Vue / Nuxt <b>~<span data-count="8">8</span></b></div>
-          <div>PR đã gộp vào nền tảng mới <b><span data-count="1060">1.060</span></b></div>
-          <div>Dịch vụ ngoài đã kết nối <b><span data-count="15">15</span>+</b></div>
+          <div>{{glance.statYears}} <b>~<span data-count="8">8</span></b></div>
+          <div>{{glance.statPrs}} <b><span data-count="1060">{{glance.statPrsValue}}</span></b></div>
+          <div>{{glance.statServices}} <b><span data-count="15">15</span>+</b></div>
         </div>
         <div class="steps">
           <div class="step">
-            <div class="step-head"><span class="no">01</span><div><h3>Giao diện</h3><p>Storefront thinkpro.vn bản V4 đạt điểm tuyệt đối về tốc độ, trên cả điện thoại lẫn máy tính.</p></div></div>
+            <div class="step-head"><span class="no">01</span><div><h3>{{glance.s1Title}}</h3><p>{{glance.s1Text}}</p></div></div>
             <div class="term"><div class="term-bar"><i></i><i></i><i></i>bay: lighthouse</div><div class="term-body">
-<div class="tl cmd">$ lighthouse thinkpro.vn   # bản V4</div><div class="tl">▸ tốc độ .... <span class="ok tl">100</span>  điện thoại + máy tính</div><div class="tl">▸ SEO ....... <span class="ok tl">100</span></div></div></div>
+<div class="tl cmd">{{glance.s1Cmd}}</div><div class="tl">{{glance.s1Speed}} <span class="ok tl">100</span>  {{glance.s1SpeedNote}}</div><div class="tl">▸ SEO ....... <span class="ok tl">100</span></div></div></div>
           </div>
           <div class="step">
-            <div class="step-head"><span class="no">02</span><div><h3>Nghiệp vụ</h3><p>Đơn hàng, kho, bảo hành, sàn, vận chuyển — tôi là tác giả phần lớn nền tảng bán lẻ mới.</p></div></div>
+            <div class="step-head"><span class="no">02</span><div><h3>{{glance.s2Title}}</h3><p>{{glance.s2Text}}</p></div></div>
             <div class="term"><div class="term-bar"><i></i><i></i><i></i>bay: github</div><div class="term-body">
-<div class="tl cmd">$ gh pr list --state merged --author @me | wc -l</div><div class="tl ok">1060</div><div class="tl dim"># ~72% trên 1.482 PR của dự án</div></div></div>
+<div class="tl cmd">$ gh pr list --state merged --author @me | wc -l</div><div class="tl ok">1060</div><div class="tl dim">{{glance.s2Note}}</div></div></div>
           </div>
           <div class="step">
-            <div class="step-head"><span class="no">03</span><div><h3>Cầm lái AI</h3><p>AI viết code theo luật tôi đặt. Tôi quyết kiến trúc, nghiệp vụ và rà soát trước khi gộp.</p></div></div>
+            <div class="step-head"><span class="no">03</span><div><h3>{{glance.s3Title}}</h3><p>{{glance.s3Text}}</p></div></div>
             <div class="term"><div class="term-bar"><i></i><i></i><i></i>bay: claude</div><div class="term-body">
-<div class="tl cmd">$ claude "thêm đối soát tiền thu hộ GHN"</div><div class="tl">▸ đọc code thật trước khi sửa <span class="ok tl">✓</span></div><div class="tl">▸ hook chặn lệnh nguy hiểm .. <span class="ok tl">✓</span></div><div class="tl">▸ tôi rà soát rồi mới gộp ... <span class="ok tl">✓</span></div></div></div>
+<div class="tl cmd">{{glance.s3Cmd}}</div><div class="tl">{{glance.s3Line1}} <span class="ok tl">✓</span></div><div class="tl">{{glance.s3Line2}} <span class="ok tl">✓</span></div><div class="tl">{{glance.s3Line3}} <span class="ok tl">✓</span></div></div></div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="kinh-nghiem">
+  <section id="experience">
     <div class="wrap">
-      <div class="eyebrow reveal">Kinh nghiệm · Thinkpro</div>
-      <h2 class="reveal" style="max-width:24ch">Tám năm Frontend.<br /><em>Một năm cầm lái cả hệ thống.</em></h2>
+      <div class="eyebrow reveal">{{exp.eyebrow}}</div>
+      <h2 class="reveal" style="max-width:24ch">{{exp.title}}</h2>
       <div class="opts">
         <div class="opt reveal">
           <div class="opt-top"><span>Frontend Developer</span><b>04/2021 — 01/2026</b></div>
-          <h3>Storefront thinkpro.vn</h3>
-          <p>Xây qua 2 thế hệ, Nuxt 2 rồi Nuxt 3, tự viết khoảng 3/4 số code.</p>
+          <h3>{{exp.feTitle}}</h3>
+          <p>{{exp.feText}}</p>
           <div class="stage"><div class="gauges">
-            <div class="gauge"><svg viewBox="0 0 96 96"><circle class="track" cx="48" cy="48" r="42" /><circle class="val" cx="48" cy="48" r="42" /><text x="48" y="48">100</text></svg>Tốc độ</div>
+            <div class="gauge"><svg viewBox="0 0 96 96"><circle class="track" cx="48" cy="48" r="42" /><circle class="val" cx="48" cy="48" r="42" /><text x="48" y="48">100</text></svg>{{exp.gaugeSpeed}}</div>
             <div class="gauge"><svg viewBox="0 0 96 96"><circle class="track" cx="48" cy="48" r="42" /><circle class="val" cx="48" cy="48" r="42" /><text x="48" y="48">100</text></svg>SEO</div>
-          </div><small>Lighthouse · bản V4</small></div>
+          </div><small>{{exp.gaugeNote}}</small></div>
           <ul class="checks">
-            <li>Điểm tốc độ <b>100/100</b> trên cả điện thoại lẫn máy tính</li>
-            <li>SEO kỹ thuật cùng đội marketing: dữ liệu có cấu trúc, sitemap, Merchant Center</li>
-            <li>CMS nội bộ, storefront GoodSpace, giao diện cho nice.design</li>
+            <li>{{exp.feCheck1}}</li>
+            <li>{{exp.feCheck2}}</li>
+            <li>{{exp.feCheck3}}</li>
           </ul>
         </div>
         <div class="opt reveal" style="--rd:.1s">
-          <div class="opt-top"><span>Kỹ sư dẫn dắt nền tảng mới</span><b>02/2026 — nay</b></div>
-          <h3>Nền tảng bán lẻ đa site</h3>
-          <p>Thay hệ cũ Laravel / MySQL bằng một bộ code Nuxt 4 phục vụ 4 site và 1 CMS.</p>
-          <div class="stage"><div class="flow"><span>Đơn hàng</span><i></i><span>Xuất kho</span><i></i><span>Giao vận</span><i></i><span>Hoá đơn</span></div><small>Chạy thật từ 19/08/2026</small></div>
+          <div class="opt-top"><span>{{exp.leadRole}}</span><b>{{exp.leadWhen}}</b></div>
+          <h3>{{exp.leadTitle}}</h3>
+          <p>{{exp.leadText}}</p>
+          <div class="stage"><div class="flow"><span>{{exp.flowOrder}}</span><i></i><span>{{exp.flowFulfillment}}</span><i></i><span>{{exp.flowShipping}}</span><i></i><span>{{exp.flowInvoice}}</span></div><small>{{exp.flowNote}}</small></div>
           <ul class="checks">
-            <li>Tác giả <b>1.060 / 1.482</b> PR đã gộp, hơn <b>260</b> bảng dữ liệu</li>
-            <li>Kết nối <b>15+</b> dịch vụ: sàn, vận chuyển, thanh toán, kế toán</li>
-            <li>Tự làm phần chuyển toàn bộ dữ liệu từ hệ cũ sang</li>
+            <li>{{exp.leadCheck1}}</li>
+            <li>{{exp.leadCheck2}}</li>
+            <li>{{exp.leadCheck3}}</li>
           </ul>
         </div>
       </div>
       <div class="earlier reveal">
-        <div><span>2020 — 2021</span><b>Azoom Việt Nam</b><p>CMS vận hành Azoom.jp, giảm chi phí gọi Google API cho carparking.jp</p></div>
-        <div><span>2019 — 2020</span><b>Amela</b><p>Base CMS dùng lại cho nhiều dự án outsource</p></div>
-        <div><span>2018 — 2019</span><b>ABA</b><p>Thực tập — CMS nghiệp vụ kế toán</p></div>
+        <div><span>2020 — 2021</span><b>{{exp.azoomName}}</b><p>{{exp.azoomText}}</p></div>
+        <div><span>2019 — 2020</span><b>Amela</b><p>{{exp.amelaText}}</p></div>
+        <div><span>2018 — 2019</span><b>ABA</b><p>{{exp.abaText}}</p></div>
       </div>
     </div>
   </section>
 
-  <section class="gather" id="gather" aria-label="1.060 PR đã gộp">
+  <section class="gather" id="gather" aria-label="{{gather.label}}">
     <div class="gather-sticky">
       <div class="gather-num"><span id="gnum">0</span><sup>+</sup></div>
-      <p class="gather-cap" id="gcap"><b>PR đã gộp vào nền tảng mới</b> — khoảng 72% của cả dự án, trong 9 tháng.</p>
+      <p class="gather-cap" id="gcap">{{gather.caption}}</p>
     </div>
   </section>
 
-  <section id="du-an">
+  <section id="projects">
     <div class="wrap">
-      <div class="eyebrow reveal">Dự án & tác động</div>
-      <h2 class="reveal">Việc tôi làm, đổi được gì.</h2>
+      <div class="eyebrow reveal">{{projects.eyebrow}}</div>
+      <h2 class="reveal">{{projects.title}}</h2>
       <div class="grid2">
         <div class="bento reveal">
           <div class="ill"><div class="fan"><div class="fan-col"><span>ThinkPro</span><span>GoodSpace</span><span>nice.design</span><span>Leaf</span></div>
             <svg viewBox="0 0 70 150"><path d="M0 16 C40 16 30 75 70 75" /><path d="M0 55 C35 55 35 75 70 75" /><path d="M0 95 C35 95 35 75 70 75" /><path d="M0 134 C40 134 30 75 70 75" /></svg>
-            <span class="hub">1 bộ code · Nuxt 4</span></div></div>
-          <div class="b-foot"><span class="ico">◈</span><div><small>Nền tảng</small><h3>Bốn site, một bộ code</h3></div><span class="n">01</span>
-            <p>Bốn thương hiệu dùng chung một nền tảng và một trang quản trị, thay vì mỗi site một hệ riêng.</p></div>
+            <span class="hub">{{projects.p1Hub}}</span></div></div>
+          <div class="b-foot"><span class="ico">◈</span><div><small>{{projects.p1Tag}}</small><h3>{{projects.p1Title}}</h3></div><span class="n">01</span>
+            <p>{{projects.p1Text}}</p></div>
         </div>
         <div class="bento reveal" style="--rd:.08s">
           <div class="ill"><div class="bars">
-            <div><label>Tốc độ · V4 <b>100 / 100</b></label><div class="bar"><i style="--w:100%"></i></div></div>
+            <div><label>{{projects.p2Speed}} <b>100 / 100</b></label><div class="bar"><i style="--w:100%"></i></div></div>
             <div><label>SEO <b>100 / 100</b></label><div class="bar"><i style="--w:100%"></i></div></div>
           </div></div>
-          <div class="b-foot"><span class="ico">◔</span><div><small>Storefront</small><h3>thinkpro.vn điểm tuyệt đối</h3></div><span class="n">02</span>
-            <p>Tối ưu ảnh, font, bố cục và độ nhạy thao tác theo từng trang; đo tốc độ từ chính khách thật.</p></div>
+          <div class="b-foot"><span class="ico">◔</span><div><small>Storefront</small><h3>{{projects.p2Title}}</h3></div><span class="n">02</span>
+            <p>{{projects.p2Text}}</p></div>
         </div>
         <div class="bento reveal">
           <div class="ill"><div class="bars">
-            <div><label>Bộ lọc sản phẩm <b>nhanh hơn ~40%</b></label><div class="bar"><i class="old" style="--w:100%"></i></div><div class="bar" style="margin-top:5px"><i style="--w:61%"></i></div></div>
-            <div><label>Kiểm tra tự động trên CI <b>nhanh hơn gấp đôi</b></label><div class="bar"><i class="old" style="--w:100%"></i></div><div class="bar" style="margin-top:5px"><i style="--w:43%"></i></div></div>
+            <div><label>{{projects.p3Bar1}}</label><div class="bar"><i class="old" style="--w:100%"></i></div><div class="bar" style="margin-top:5px"><i style="--w:61%"></i></div></div>
+            <div><label>{{projects.p3Bar2}}</label><div class="bar"><i class="old" style="--w:100%"></i></div><div class="bar" style="margin-top:5px"><i style="--w:43%"></i></div></div>
           </div></div>
-          <div class="b-foot"><span class="ico">⚡</span><div><small>Hiệu năng</small><h3>Tìm đúng chỗ chậm rồi xử lý</h3></div><span class="n">03</span>
-            <p>Thanh xám là trước, thanh màu là sau. Khách thao tác nhanh hơn, đội dev chờ ít hơn.</p></div>
+          <div class="b-foot"><span class="ico">⚡</span><div><small>{{projects.p3Tag}}</small><h3>{{projects.p3Title}}</h3></div><span class="n">03</span>
+            <p>{{projects.p3Text}}</p></div>
         </div>
         <div class="bento reveal" style="--rd:.08s">
           <div class="ill"><div class="rows">
-            <div>Shopee · TikTok Shop <span>đồng bộ đơn, tồn</span></div>
-            <div>GHN <span>vận đơn, tiền thu hộ</span></div>
-            <div class="hot">SePay · VietQR · sao kê <span>tiền về tự khớp</span></div>
+            <div>Shopee · TikTok Shop <span>{{projects.p4Row1}}</span></div>
+            <div>GHN <span>{{projects.p4Row2}}</span></div>
+            <div class="hot">{{projects.p4Row3Name}} <span>{{projects.p4Row3}}</span></div>
           </div></div>
-          <div class="b-foot"><span class="ico">⇄</span><div><small>Tích hợp</small><h3>Hơn 15 dịch vụ ngoài</h3></div><span class="n">04</span>
-            <p>Sàn, vận chuyển, thanh toán, Zalo, Lark, MISA — và đối soát tự động cho phòng kế toán.</p></div>
+          <div class="b-foot"><span class="ico">⇄</span><div><small>{{projects.p4Tag}}</small><h3>{{projects.p4Title}}</h3></div><span class="n">04</span>
+            <p>{{projects.p4Text}}</p></div>
         </div>
         <div class="bento reveal">
-          <div class="ill"><div class="fan"><div class="fan-col"><span>Luật dự án</span><span>Hook chặn</span><span>9 skill</span><span>9 agent</span></div>
+          <div class="ill"><div class="fan"><div class="fan-col"><span>{{projects.p5Col1}}</span><span>{{projects.p5Col2}}</span><span>{{projects.p5Col3}}</span><span>{{projects.p5Col4}}</span></div>
             <svg viewBox="0 0 70 150"><path d="M0 16 C40 16 30 75 70 75" /><path d="M0 55 C35 55 35 75 70 75" /><path d="M0 95 C35 95 35 75 70 75" /><path d="M0 134 C40 134 30 75 70 75" /></svg>
-            <span class="hub">Tôi rà soát</span></div></div>
-          <div class="b-foot"><span class="ico">✳</span><div><small>Cách làm việc</small><h3>Quy trình làm việc cùng AI</h3></div><span class="n">05</span>
-            <p>AI phải đọc code thật trước khi sửa, thao tác nguy hiểm bị chặn tự động, cả nhóm dùng chung.</p></div>
+            <span class="hub">{{projects.p5Hub}}</span></div></div>
+          <div class="b-foot"><span class="ico">✳</span><div><small>{{projects.p5Tag}}</small><h3>{{projects.p5Title}}</h3></div><span class="n">05</span>
+            <p>{{projects.p5Text}}</p></div>
         </div>
         <div class="bento reveal" style="--rd:.08s">
           <div class="ill"><div class="rows">
-            <div>carparking.jp <span>giảm gọi Google API</span></div>
-            <div>Base CMS · Amela <span>dùng lại nhiều dự án</span></div>
-            <div>CMS kế toán · ABA <span>dữ liệu, báo cáo</span></div>
+            <div>carparking.jp <span>{{projects.p6Row1}}</span></div>
+            <div>Base CMS · Amela <span>{{projects.p6Row2}}</span></div>
+            <div>{{projects.p6Row3Name}} <span>{{projects.p6Row3}}</span></div>
           </div></div>
-          <div class="b-foot"><span class="ico">◷</span><div><small>Trước Thinkpro</small><h3>Ba chặng đầu nghề</h3></div><span class="n">06</span>
-            <p>Sản phẩm Nhật, dự án outsource, phần mềm kế toán — nền để hiểu nhiều kiểu nghiệp vụ.</p></div>
+          <div class="b-foot"><span class="ico">◷</span><div><small>{{projects.p6Tag}}</small><h3>{{projects.p6Title}}</h3></div><span class="n">06</span>
+            <p>{{projects.p6Text}}</p></div>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="ma-nguon-mo">
+  <section id="open-source">
     <div class="wrap">
-      <div class="eyebrow reveal">Mã nguồn mở</div>
-      <h2 class="reveal">Những thứ tôi chia sẻ.</h2>
+      <div class="eyebrow reveal">{{oss.eyebrow}}</div>
+      <h2 class="reveal">{{oss.title}}</h2>
       <div class="panel reveal">
         <div class="statrow" style="border-bottom:0">
-          <div>Gói npm đã xuất bản <b><span data-count="31">31</span></b></div>
-          <div>Lượt tải 12 tháng qua <b>~<span data-count="30">30</span>k</b></div>
-          <div>Tài khoản npm <b>vt7</b></div>
+          <div>{{oss.statPackages}} <b><span data-count="31">31</span></b></div>
+          <div>{{oss.statDownloads}} <b>~<span data-count="30">30</span>k</b></div>
+          <div>{{oss.statAccount}} <b>vt7</b></div>
         </div>
       </div>
     </div>
@@ -414,36 +421,36 @@
 
   <section>
     <div class="wrap">
-      <div class="eyebrow reveal">Kỹ năng</div>
-      <h2 class="reveal">Ghi đúng mức mình làm được.</h2>
+      <div class="eyebrow reveal">{{skills.eyebrow}}</div>
+      <h2 class="reveal">{{skills.title}}</h2>
       <div class="skills reveal">
-        <div class="r"><div><b>Thành thạo</b><small>tự làm, tự chịu trách nhiệm</small></div><div class="tags"><span>Vue 3</span><span>Nuxt 4</span><span>TypeScript</span><span>Tailwind CSS 4</span><span>Nuxt UI</span><span>Vite</span><span>Core Web Vitals</span><span>SEO kỹ thuật</span><span>Figma</span></div></div>
-        <div class="r"><div><b>Xây cùng AI</b><small>tôi thiết kế, quyết định, rà soát</small></div><div class="tags ai"><span>Node.js / Nitro</span><span>PostgreSQL</span><span>Prisma</span><span>Redis</span><span>BullMQ</span><span>Meilisearch</span><span>Kubernetes</span><span>Jenkins</span><span>GitHub Actions</span></div></div>
-        <div class="r"><div><b>Làm việc với AI</b><small>công cụ hằng ngày</small></div><div class="tags"><span>Claude Code</span><span>Viết luật & hook cho AI</span></div></div>
+        <div class="r"><div><b>{{skills.proficient}}</b><small>{{skills.proficientNote}}</small></div><div class="tags"><span>Vue 3</span><span>Nuxt 4</span><span>TypeScript</span><span>Tailwind CSS 4</span><span>Nuxt UI</span><span>Vite</span><span>Core Web Vitals</span><span>{{skills.tagSeo}}</span><span>Figma</span></div></div>
+        <div class="r"><div><b>{{skills.withAi}}</b><small>{{skills.withAiNote}}</small></div><div class="tags ai"><span>Node.js / Nitro</span><span>PostgreSQL</span><span>Prisma</span><span>Redis</span><span>BullMQ</span><span>Meilisearch</span><span>Kubernetes</span><span>Jenkins</span><span>GitHub Actions</span></div></div>
+        <div class="r"><div><b>{{skills.aiWork}}</b><small>{{skills.aiWorkNote}}</small></div><div class="tags"><span>Claude Code</span><span>{{skills.tagRules}}</span></div></div>
       </div>
     </div>
   </section>
 
-  <section class="final" id="lien-he">
+  <section class="final" id="contact">
     <div class="wrap">
-      <div class="eyebrow reveal">Liên hệ</div>
-      <h2 class="reveal">Cùng làm điều gì đó chạy thật nhé.</h2>
-      <p class="sub reveal" style="margin-left:auto;margin-right:auto">Đang tìm vị trí Frontend / Fullstack tại công ty sản phẩm, ở Hà Nội.</p>
+      <div class="eyebrow reveal">{{contact.eyebrow}}</div>
+      <h2 class="reveal">{{contact.title}}</h2>
+      <p class="sub reveal" style="margin-left:auto;margin-right:auto">{{contact.text}}</p>
       <div class="cta reveal">
-        <a class="btn primary" href="Vu-Thanh-Bay-CV.pdf" download>↓ Tải CV (PDF)</a>
+        <a class="btn primary" href="{{page.base}}{{cv.file}}" download>{{cv.download}}</a>
         <a class="btn" href="mailto:vuthanhbayit@gmail.com">vuthanhbayit@gmail.com</a>
-        <a class="btn" id="phone" href="#lien-he" role="button" data-nosnippet>Hiện số điện thoại</a>
+        <a class="btn" id="phone" href="#contact" role="button" data-nosnippet>{{contact.showPhone}}</a>
         <a class="btn" href="https://github.com/vuthanhbayit" target="_blank" rel="noopener">GitHub ↗</a>
       </div>
     </div>
   </section>
 </main>
 
-<footer><div class="wrap"><span>© 2026 Vũ Thanh Bảy · Hà Nội</span></div></footer>
+<footer><div class="wrap"><span>{{footer.text}}</span></div></footer>
 
 <script>
 const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches
-const fmt = new Intl.NumberFormat('vi-VN')
+const fmt = new Intl.NumberFormat('{{meta.numberLocale}}')
 const clamp = (v, a = 0, b = 1) => Math.min(b, Math.max(a, v))
 const easeOut = (t) => 1 - Math.pow(1 - t, 3)
 
@@ -728,11 +735,19 @@ phoneBtn.addEventListener('click', (e) => {
   if (phoneBtn.dataset.shown) return
   e.preventDefault()
   const n = [...'0601342023'].reverse().map((c) => (+c + 7) % 10).join('')
-  phoneBtn.textContent = n.replace(/(\d{4})(\d{3})(\d{3})/, '$1 $2 $3')
-  phoneBtn.href = 'tel:' + n
+  const intl = {{meta.phoneIntl}}
+  phoneBtn.textContent = intl ? `+84 ${n.slice(1, 4)} ${n.slice(4, 7)} ${n.slice(7)}` : n.replace(/(\d{4})(\d{3})(\d{3})/, '$1 $2 $3')
+  phoneBtn.href = 'tel:' + (intl ? '+84' + n.slice(1) : n)
   phoneBtn.removeAttribute('role')
   phoneBtn.dataset.shown = '1'
 })
+
+// Đổi ngôn ngữ thì mở đúng mục người xem đang đọc ở bản kia
+document.querySelectorAll('.lang a').forEach((a) => a.addEventListener('click', () => {
+  let id = ''
+  document.querySelectorAll('main section[id]').forEach((sec) => { if (sec.getBoundingClientRect().top <= innerHeight * 0.4) id = sec.id })
+  if (id) a.href = a.getAttribute('href').split('#')[0] + '#' + id
+}))
 </script>
 </body>
 </html>
