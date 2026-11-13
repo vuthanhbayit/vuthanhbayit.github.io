@@ -1,0 +1,2 @@
+User-agent: *
+Disallow: /Vu-Thanh-Bay-CV.pdf
