@@ -1,4 +1,4 @@
-// Dựng trang tĩnh cho từng ngôn ngữ: src/index.html (khuôn) + lang/<mã>.json → dist/
+// Dựng trang tĩnh cho từng ngôn ngữ: src/index.html (khuôn) + lang/<mã>.json, kết quả ở dist/
 // Chạy: node build.mjs   (Node thuần, không cần cài gói nào)
 
 import { cpSync, mkdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs'
@@ -31,7 +31,7 @@ for (const { code } of LANGS.slice(1)) {
   const missing = baseKeys.filter((k) => !keys.has(k))
   const extra = [...keys].filter((k) => !baseKeys.includes(k))
   if (missing.length || extra.length) {
-    throw new Error(`lang/${code}.json lệch với lang/${LANGS[0].code}.json — thiếu: [${missing}] thừa: [${extra}]`)
+    throw new Error(`lang/${code}.json lệch với lang/${LANGS[0].code}.json. Thiếu: [${missing}] thừa: [${extra}]`)
   }
 }
 
@@ -61,7 +61,7 @@ function render(lang) {
   const html = template.replace(/\{\{\s*([\w.]+)\s*\}\}/g, (_, path) => {
     const value = lookup(context, path)
     if (value === undefined || (value !== null && typeof value === 'object')) {
-      throw new Error(`Khuôn dùng khoá «${path}» nhưng lang/${lang.code}.json không có`)
+      throw new Error(`Khuôn dùng khoá "${path}" nhưng lang/${lang.code}.json không có`)
     }
     used.add(path)
     return String(value)
@@ -76,5 +76,5 @@ cpSync('public', OUT, { recursive: true })
 for (const lang of LANGS) {
   mkdirSync(`${OUT}/${lang.dir}`, { recursive: true })
   writeFileSync(`${OUT}/${lang.dir}index.html`, render(lang))
-  console.log(`✓ ${OUT}/${lang.dir}index.html (${lang.code})`)
+  console.log(`xong ${OUT}/${lang.dir}index.html (${lang.code})`)
 }

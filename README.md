@@ -1,16 +1,16 @@
-# Vũ Thanh Bảy — Senior Frontend Engineer
+# Vũ Thanh Bảy | Senior Frontend Engineer
 
-Trang cá nhân: https://vuthanhbayit.github.io/ · English: https://vuthanhbayit.github.io/en/
+Trang cá nhân: https://vuthanhbayit.github.io/ | English: https://vuthanhbayit.github.io/en/
 
 Gần 8 năm làm giao diện web với Vue / Nuxt. Từ 2026 dẫn dắt xây nền tảng bán lẻ đa site cùng AI.
 
 ## Cấu trúc
 
-- `src/index.html` — khuôn của trang (HTML, CSS, JavaScript thuần, một tấm canvas vẽ băng giấy). Chỗ nào có chữ thì để `{{khoá}}`.
-- `lang/vi.json`, `lang/en.json` — toàn bộ câu chữ, mỗi ngôn ngữ một file, cùng một bộ khoá.
-- `public/` — file đi kèm, chép nguyên sang trang: CV tiếng Việt, CV tiếng Anh, `robots.txt`.
-- `build.mjs` — ghép khuôn với từng file ngôn ngữ, ra `dist/index.html` (tiếng Việt) và `dist/en/index.html` (tiếng Anh). Node thuần, không cần cài gói nào.
-- `.github/workflows/deploy.yml` — đẩy lên nhánh `main` là GitHub tự dựng rồi đưa `dist/` lên GitHub Pages.
+- `src/index.html`: khuôn của trang (HTML, CSS, JavaScript thuần, một tấm canvas vẽ băng giấy). Chỗ nào có chữ thì để `{{khoá}}`.
+- `lang/vi.json`, `lang/en.json`: toàn bộ câu chữ, mỗi ngôn ngữ một file, cùng một bộ khoá.
+- `public/`: file đi kèm, chép nguyên sang trang: CV tiếng Việt, CV tiếng Anh, `robots.txt`.
+- `build.mjs`: ghép khuôn với từng file ngôn ngữ, ra `dist/index.html` (tiếng Việt) và `dist/en/index.html` (tiếng Anh). Node thuần, không cần cài gói nào.
+- `.github/workflows/deploy.yml`: đẩy lên nhánh `main` là GitHub tự dựng rồi đưa `dist/` lên GitHub Pages.
 
 ## Sửa chữ, thêm ngôn ngữ
 

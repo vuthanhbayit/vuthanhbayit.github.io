@@ -60,6 +60,9 @@
   .btn.primary:hover { background: #dfa076; }
   .btn.sm { height: 34px; padding: 0 14px; font-size: 12.8px; }
   .btn.dark { background: var(--ink); color: var(--canvas); border-color: transparent; }
+  .btn[download]::before, .btn[target='_blank']::after { content: ''; width: 14px; height: 14px; flex: none; background: currentColor; }
+  .btn[download]::before { -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='black' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M8 2v8.5M4.5 7 8 10.5 11.5 7M3 13.5h10'/%3E%3C/svg%3E") center / contain no-repeat; mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='black' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M8 2v8.5M4.5 7 8 10.5 11.5 7M3 13.5h10'/%3E%3C/svg%3E") center / contain no-repeat; }
+  .btn[target='_blank']::after { -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='black' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 11 11 5M6 5h5v5'/%3E%3C/svg%3E") center / contain no-repeat; mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='black' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 11 11 5M6 5h5v5'/%3E%3C/svg%3E") center / contain no-repeat; }
 
   .hero { text-align: center; padding: 76px 0 150px; }
   .pill { display: inline-flex; align-items: center; gap: 10px; padding: 5px 6px 5px 14px; border: 1px solid var(--line); border-radius: 999px; background: var(--surface); font-size: 12.8px; font-weight: 500; }
@@ -71,6 +74,7 @@
   html:not(.js) #phone { display: none; }
   .trust { display: flex; gap: 22px; justify-content: center; flex-wrap: wrap; margin-top: 26px; font-size: 12.8px; color: var(--muted); }
   .trust b { color: var(--ink); font-weight: 600; }
+  .trust span::before { content: ''; display: inline-block; width: 5px; height: 5px; border-radius: 50%; background: var(--success); margin-right: 9px; vertical-align: middle; }
 
   section { padding: 84px 0; }
   .eyebrow { font-size: 11.5px; font-weight: 500; letter-spacing: .08em; text-transform: uppercase; color: var(--accent-strong); margin-bottom: 10px; }
@@ -130,7 +134,7 @@
   .stage small { position: absolute; bottom: 12px; left: 0; right: 0; text-align: center; font-size: 10px; letter-spacing: .12em; text-transform: uppercase; color: var(--terminal-muted); }
   ul.checks { list-style: none; display: grid; gap: 10px; font-size: 14.5px; }
   ul.checks li { padding-left: 26px; position: relative; }
-  ul.checks li::before { content: '✓'; position: absolute; left: 2px; color: var(--success); font-weight: 600; }
+  ul.checks li::before { content: ''; position: absolute; left: 6px; top: .62em; width: 6px; height: 6px; border-radius: 50%; background: var(--success); }
   ul.checks b { font-weight: 600; }
   .earlier { margin-top: 18px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); }
   .earlier div { display: grid; grid-template-columns: 110px 190px 1fr; gap: 14px; padding: 14px 20px; font-size: 14px; align-items: baseline; }
@@ -154,11 +158,10 @@
   .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 34px; }
   .bento { border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); overflow: hidden; transition: transform .35s var(--ease), border-color .2s; }
   .ill { height: 200px; border-bottom: 1px solid var(--line-subtle); background: linear-gradient(var(--line-subtle) 1px, transparent 1px) 0 0 / 22px 22px, linear-gradient(90deg, var(--line-subtle) 1px, transparent 1px) 0 0 / 22px 22px, var(--canvas-alt); display: grid; place-items: center; padding: 22px; position: relative; }
-  .b-foot { padding: 18px 20px 20px; display: grid; grid-template-columns: 38px 1fr auto; gap: 12px; }
-  .ico { width: 38px; height: 38px; border-radius: 10px; background: var(--accent-soft); border: 1px solid rgba(153,86,47,.25); display: grid; place-items: center; color: var(--accent-strong); font-size: 16px; }
+  .b-foot { padding: 18px 20px 20px; display: grid; grid-template-columns: 38px 1fr; gap: 12px; }
+  .ico { width: 38px; height: 38px; border-radius: 10px; background: var(--accent-soft); border: 1px solid rgba(153,86,47,.25); display: grid; place-items: center; color: var(--accent-strong); font: 500 12.5px var(--mono); }
   .b-foot small { display: block; font-size: 10.5px; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
   .b-foot h3 { font-size: 17px; font-weight: 600; letter-spacing: -.01em; text-decoration: underline; text-decoration-color: var(--line); text-underline-offset: 4px; }
-  .b-foot .n { font-size: 20px; color: var(--muted); font-variant-numeric: tabular-nums; }
   .b-foot p { grid-column: 1 / -1; color: var(--muted); font-size: 14px; }
 
   .rows { width: min(360px, 100%); display: grid; gap: 8px; font-size: 12px; }
@@ -246,7 +249,7 @@
       <a class="link" href="#open-source">{{nav.openSource}}</a>
       <a class="link" href="#contact">{{nav.contact}}</a>
       <div class="lang" role="group" aria-label="{{nav.language}}">{{page.langItems}}</div>
-      <a class="btn sm" href="https://github.com/vuthanhbayit" target="_blank" rel="noopener">GitHub ↗</a>
+      <a class="btn sm" href="https://github.com/vuthanhbayit" target="_blank" rel="noopener">GitHub</a>
       <a class="btn sm dark" href="{{page.base}}{{cv.file}}" download>{{nav.downloadCv}}</a>
     </nav>
   </div>
@@ -260,10 +263,10 @@
     <p class="lead reveal" style="--rd:.16s">{{hero.lead}}</p>
     <div class="cta reveal" style="--rd:.24s">
       <a class="btn primary" href="{{page.base}}{{cv.file}}" download>{{cv.download}}</a>
-      <a class="btn" href="https://github.com/vuthanhbayit" target="_blank" rel="noopener">GitHub ↗</a>
+      <a class="btn" href="https://github.com/vuthanhbayit" target="_blank" rel="noopener">GitHub</a>
     </div>
     <div class="trust reveal" style="--rd:.32s">
-      <span>{{hero.trustPrs}}</span><span>✓ Lighthouse <b>100/100</b></span><span>{{hero.trustNpm}}</span>
+      <span>{{hero.trustPrs}}</span><span>Lighthouse <b>100/100</b></span><span>{{hero.trustNpm}}</span>
     </div>
   </div>
 
@@ -281,7 +284,7 @@
           <div class="step">
             <div class="step-head"><span class="no">01</span><div><h3>{{glance.s1Title}}</h3><p>{{glance.s1Text}}</p></div></div>
             <div class="term"><div class="term-bar"><i></i><i></i><i></i>bay: lighthouse</div><div class="term-body">
-<div class="tl cmd">{{glance.s1Cmd}}</div><div class="tl">{{glance.s1Speed}} <span class="ok tl">100</span>  {{glance.s1SpeedNote}}</div><div class="tl">▸ SEO ....... <span class="ok tl">100</span></div></div></div>
+<div class="tl cmd">{{glance.s1Cmd}}</div><div class="tl">{{glance.s1Speed}} <span class="ok tl">100</span>  {{glance.s1SpeedNote}}</div><div class="tl">- SEO ....... <span class="ok tl">100</span></div></div></div>
           </div>
           <div class="step">
             <div class="step-head"><span class="no">02</span><div><h3>{{glance.s2Title}}</h3><p>{{glance.s2Text}}</p></div></div>
@@ -291,7 +294,7 @@
           <div class="step">
             <div class="step-head"><span class="no">03</span><div><h3>{{glance.s3Title}}</h3><p>{{glance.s3Text}}</p></div></div>
             <div class="term"><div class="term-bar"><i></i><i></i><i></i>bay: claude</div><div class="term-body">
-<div class="tl cmd">{{glance.s3Cmd}}</div><div class="tl">{{glance.s3Line1}} <span class="ok tl">✓</span></div><div class="tl">{{glance.s3Line2}} <span class="ok tl">✓</span></div><div class="tl">{{glance.s3Line3}} <span class="ok tl">✓</span></div></div></div>
+<div class="tl cmd">{{glance.s3Cmd}}</div><div class="tl">{{glance.s3Line1}} <span class="ok tl">ok</span></div><div class="tl">{{glance.s3Line2}} <span class="ok tl">ok</span></div><div class="tl">{{glance.s3Line3}} <span class="ok tl">ok</span></div></div></div>
           </div>
         </div>
       </div>
@@ -304,7 +307,7 @@
       <h2 class="reveal" style="max-width:24ch">{{exp.title}}</h2>
       <div class="opts">
         <div class="opt reveal">
-          <div class="opt-top"><span>Frontend Developer</span><b>04/2021 — 01/2026</b></div>
+          <div class="opt-top"><span>Frontend Developer</span><b>04/2021 - 01/2026</b></div>
           <h3>{{exp.feTitle}}</h3>
           <p>{{exp.feText}}</p>
           <div class="stage"><div class="gauges">
@@ -330,9 +333,9 @@
         </div>
       </div>
       <div class="earlier reveal">
-        <div><span>2020 — 2021</span><b>{{exp.azoomName}}</b><p>{{exp.azoomText}}</p></div>
-        <div><span>2019 — 2020</span><b>Amela</b><p>{{exp.amelaText}}</p></div>
-        <div><span>2018 — 2019</span><b>ABA</b><p>{{exp.abaText}}</p></div>
+        <div><span>2020 - 2021</span><b>{{exp.azoomName}}</b><p>{{exp.azoomText}}</p></div>
+        <div><span>2019 - 2020</span><b>Amela</b><p>{{exp.amelaText}}</p></div>
+        <div><span>2018 - 2019</span><b>ABA</b><p>{{exp.abaText}}</p></div>
       </div>
     </div>
   </section>
@@ -353,7 +356,7 @@
           <div class="ill"><div class="fan"><div class="fan-col"><span>ThinkPro</span><span>GoodSpace</span><span>nice.design</span><span>Leaf</span></div>
             <svg viewBox="0 0 70 150"><path d="M0 16 C40 16 30 75 70 75" /><path d="M0 55 C35 55 35 75 70 75" /><path d="M0 95 C35 95 35 75 70 75" /><path d="M0 134 C40 134 30 75 70 75" /></svg>
             <span class="hub">{{projects.p1Hub}}</span></div></div>
-          <div class="b-foot"><span class="ico">◈</span><div><small>{{projects.p1Tag}}</small><h3>{{projects.p1Title}}</h3></div><span class="n">01</span>
+          <div class="b-foot"><span class="ico">01</span><div><small>{{projects.p1Tag}}</small><h3>{{projects.p1Title}}</h3></div>
             <p>{{projects.p1Text}}</p></div>
         </div>
         <div class="bento reveal" style="--rd:.08s">
@@ -361,7 +364,7 @@
             <div><label>{{projects.p2Speed}} <b>100 / 100</b></label><div class="bar"><i style="--w:100%"></i></div></div>
             <div><label>SEO <b>100 / 100</b></label><div class="bar"><i style="--w:100%"></i></div></div>
           </div></div>
-          <div class="b-foot"><span class="ico">◔</span><div><small>Storefront</small><h3>{{projects.p2Title}}</h3></div><span class="n">02</span>
+          <div class="b-foot"><span class="ico">02</span><div><small>Storefront</small><h3>{{projects.p2Title}}</h3></div>
             <p>{{projects.p2Text}}</p></div>
         </div>
         <div class="bento reveal">
@@ -369,32 +372,32 @@
             <div><label>{{projects.p3Bar1}}</label><div class="bar"><i class="old" style="--w:100%"></i></div><div class="bar" style="margin-top:5px"><i style="--w:61%"></i></div></div>
             <div><label>{{projects.p3Bar2}}</label><div class="bar"><i class="old" style="--w:100%"></i></div><div class="bar" style="margin-top:5px"><i style="--w:43%"></i></div></div>
           </div></div>
-          <div class="b-foot"><span class="ico">⚡</span><div><small>{{projects.p3Tag}}</small><h3>{{projects.p3Title}}</h3></div><span class="n">03</span>
+          <div class="b-foot"><span class="ico">03</span><div><small>{{projects.p3Tag}}</small><h3>{{projects.p3Title}}</h3></div>
             <p>{{projects.p3Text}}</p></div>
         </div>
         <div class="bento reveal" style="--rd:.08s">
           <div class="ill"><div class="rows">
-            <div>Shopee · TikTok Shop <span>{{projects.p4Row1}}</span></div>
+            <div>Shopee, TikTok Shop <span>{{projects.p4Row1}}</span></div>
             <div>GHN <span>{{projects.p4Row2}}</span></div>
             <div class="hot">{{projects.p4Row3Name}} <span>{{projects.p4Row3}}</span></div>
           </div></div>
-          <div class="b-foot"><span class="ico">⇄</span><div><small>{{projects.p4Tag}}</small><h3>{{projects.p4Title}}</h3></div><span class="n">04</span>
+          <div class="b-foot"><span class="ico">04</span><div><small>{{projects.p4Tag}}</small><h3>{{projects.p4Title}}</h3></div>
             <p>{{projects.p4Text}}</p></div>
         </div>
         <div class="bento reveal">
           <div class="ill"><div class="fan"><div class="fan-col"><span>{{projects.p5Col1}}</span><span>{{projects.p5Col2}}</span><span>{{projects.p5Col3}}</span><span>{{projects.p5Col4}}</span></div>
             <svg viewBox="0 0 70 150"><path d="M0 16 C40 16 30 75 70 75" /><path d="M0 55 C35 55 35 75 70 75" /><path d="M0 95 C35 95 35 75 70 75" /><path d="M0 134 C40 134 30 75 70 75" /></svg>
             <span class="hub">{{projects.p5Hub}}</span></div></div>
-          <div class="b-foot"><span class="ico">✳</span><div><small>{{projects.p5Tag}}</small><h3>{{projects.p5Title}}</h3></div><span class="n">05</span>
+          <div class="b-foot"><span class="ico">05</span><div><small>{{projects.p5Tag}}</small><h3>{{projects.p5Title}}</h3></div>
             <p>{{projects.p5Text}}</p></div>
         </div>
         <div class="bento reveal" style="--rd:.08s">
           <div class="ill"><div class="rows">
             <div>carparking.jp <span>{{projects.p6Row1}}</span></div>
-            <div>Base CMS · Amela <span>{{projects.p6Row2}}</span></div>
+            <div>Base CMS, Amela <span>{{projects.p6Row2}}</span></div>
             <div>{{projects.p6Row3Name}} <span>{{projects.p6Row3}}</span></div>
           </div></div>
-          <div class="b-foot"><span class="ico">◷</span><div><small>{{projects.p6Tag}}</small><h3>{{projects.p6Title}}</h3></div><span class="n">06</span>
+          <div class="b-foot"><span class="ico">06</span><div><small>{{projects.p6Tag}}</small><h3>{{projects.p6Title}}</h3></div>
             <p>{{projects.p6Text}}</p></div>
         </div>
       </div>
@@ -440,7 +443,7 @@
         <a class="btn primary" href="{{page.base}}{{cv.file}}" download>{{cv.download}}</a>
         <a class="btn" href="mailto:vuthanhbayit@gmail.com">vuthanhbayit@gmail.com</a>
         <a class="btn" id="phone" href="#contact" role="button" data-nosnippet>{{contact.showPhone}}</a>
-        <a class="btn" href="https://github.com/vuthanhbayit" target="_blank" rel="noopener">GitHub ↗</a>
+        <a class="btn" href="https://github.com/vuthanhbayit" target="_blank" rel="noopener">GitHub</a>
       </div>
     </div>
   </section>
@@ -517,7 +520,7 @@ function sample(r, i, t, syR) {
   let x = r.PX[i0] + (r.PX[i0 + 1] - r.PX[i0]) * fr, y = r.PY[i0] + (r.PY[i0 + 1] - r.PY[i0]) * fr - syR, z = 0
   let tx = r.TX[i0] + (r.TX[i0 + 1] - r.TX[i0]) * fr, ty = r.TY[i0] + (r.TY[i0 + 1] - r.TY[i0]) * fr
   const tl = Math.hypot(tx, ty) || 1; tx /= tl; ty /= tl
-  // Băng «thở» nhẹ, lắc chậm, và rung khi cuộn trang nhanh
+  // Băng "thở" nhẹ, lắc chậm, và rung khi cuộn trang nhanh
   x += 0.03 * SCALE * U * Math.sin(su * 0.8 + t * 0.35 + r.seed); z += 0.04 * U * Math.sin(su * 1.1 + t * 0.3)
   let fold = r.FOLD[i0] + (r.FOLD[i0 + 1] - r.FOLD[i0]) * fr + 0.25 * Math.sin(t * 0.18 + r.seed) + fx.flutter * 0.7 * Math.sin(su * 2 + t * 5)
   // Gần con trỏ: băng bị đẩy lệch ra, nhô lên và nghiêng đi

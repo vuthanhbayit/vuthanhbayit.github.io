@@ -4,7 +4,7 @@
     "ogLocale": "en_US",
     "numberLocale": "en-US",
     "phoneIntl": true,
-    "title": "Vu Thanh Bay — Senior Frontend Engineer",
+    "title": "Vu Thanh Bay | Senior Frontend Engineer",
     "description": "Nearly 8 years building web interfaces with Vue / Nuxt. Leading the build of a multi-site retail platform with AI: 1,060 PRs merged, 15+ services integrated.",
     "ogDescription": "Nearly 8 years building web interfaces with Vue / Nuxt. Leading the build of a multi-site retail platform with AI."
   },
@@ -13,23 +13,23 @@
   },
   "cv": {
     "file": "Vu-Thanh-Bay-CV-EN.pdf",
-    "download": "↓ Download CV (PDF)"
+    "download": "Download CV (PDF)"
   },
   "nav": {
     "experience": "Experience",
     "projects": "Projects",
     "openSource": "Open source",
     "contact": "Contact",
-    "downloadCv": "↓ Get CV",
+    "downloadCv": "Get CV",
     "language": "Language"
   },
   "hero": {
     "pill": "Open to Frontend / Fullstack roles",
-    "pillLink": "Contact ↗",
-    "title": "Hi, I’m Bay.",
-    "lead": "Nearly 8 years building web interfaces with Vue / Nuxt. Now I lead the build of an entire retail platform — together with AI, and I’m the one steering.",
-    "trustPrs": "✓ <b>1,060</b> PRs merged",
-    "trustNpm": "✓ <b>31</b> npm packages"
+    "pillLink": "Contact",
+    "title": "Hi, I'm Bay.",
+    "lead": "Nearly 8 years building web interfaces with Vue / Nuxt. Now I lead the build of an entire retail platform with AI, and I'm the one steering.",
+    "trustPrs": "<b>1,060</b> PRs merged",
+    "trustNpm": "<b>31</b> npm packages"
   },
   "glance": {
     "eyebrow": "At a glance",
@@ -41,30 +41,30 @@
     "s1Title": "Frontend",
     "s1Text": "The thinkpro.vn V4 storefront hit a perfect performance score on both mobile and desktop.",
     "s1Cmd": "$ lighthouse thinkpro.vn   # V4",
-    "s1Speed": "▸ speed .....",
+    "s1Speed": "- speed .....",
     "s1SpeedNote": "mobile + desktop",
     "s2Title": "Business logic",
-    "s2Text": "Orders, inventory, warranty, marketplaces, shipping — I authored most of the new retail platform.",
+    "s2Text": "I authored most of the new retail platform: orders, inventory, warranty, marketplaces, shipping.",
     "s2Note": "# ~72% of the project's 1,482 PRs",
     "s3Title": "Steering AI",
     "s3Text": "AI writes code under rules I set. I decide the architecture and business logic, and review before merging.",
     "s3Cmd": "$ claude \"add GHN cash-on-delivery reconciliation\"",
-    "s3Line1": "▸ read real code before edits",
-    "s3Line2": "▸ hooks block unsafe commands",
-    "s3Line3": "▸ I review before merging ..."
+    "s3Line1": "- read real code before edits",
+    "s3Line2": "- hooks block unsafe commands",
+    "s3Line3": "- I review before merging ..."
   },
   "exp": {
-    "eyebrow": "Experience · Thinkpro",
+    "eyebrow": "Experience at Thinkpro",
     "title": "Eight years of frontend.<br /><em>One year steering the whole system.</em>",
     "feTitle": "thinkpro.vn storefront",
     "feText": "Built across 2 generations, Nuxt 2 then Nuxt 3, writing about three quarters of the code myself.",
     "gaugeSpeed": "Performance",
-    "gaugeNote": "Lighthouse · V4",
+    "gaugeNote": "Lighthouse, V4",
     "feCheck1": "Performance score <b>100/100</b> on both mobile and desktop",
     "feCheck2": "Technical SEO with the marketing team: structured data, sitemaps, Merchant Center",
     "feCheck3": "Internal CMS, the GoodSpace storefront, front ends for nice.design",
     "leadRole": "Lead engineer, new platform",
-    "leadWhen": "02/2026 — present",
+    "leadWhen": "02/2026 - present",
     "leadTitle": "Multi-site retail platform",
     "leadText": "Replaced the legacy Laravel / MySQL system with one Nuxt 4 codebase serving 4 sites and 1 CMS.",
     "flowOrder": "Order",
@@ -78,34 +78,34 @@
     "azoomName": "Azoom Vietnam",
     "azoomText": "CMS running Azoom.jp, lower Google API costs for carparking.jp",
     "amelaText": "Base CMS reused across outsourcing projects",
-    "abaText": "Internship — accounting CMS"
+    "abaText": "Internship, building an accounting CMS"
   },
   "gather": {
     "label": "1,060 PRs merged",
-    "caption": "<b>PRs merged into the new platform</b> — about 72% of the whole project, in 9 months."
+    "caption": "<b>PRs merged into the new platform</b>, about 72% of the whole project, in 9 months."
   },
   "projects": {
     "eyebrow": "Projects & impact",
     "title": "What I did, and what it changed.",
-    "p1Hub": "1 codebase · Nuxt 4",
+    "p1Hub": "1 Nuxt 4 codebase",
     "p1Tag": "Platform",
     "p1Title": "Four sites, one codebase",
     "p1Text": "Four brands share one platform and one admin, instead of a separate system for each site.",
-    "p2Speed": "Performance · V4",
+    "p2Speed": "Performance, V4",
     "p2Title": "thinkpro.vn, perfect scores",
     "p2Text": "Optimized images, fonts, layout and responsiveness page by page; speed measured from real users.",
     "p3Bar1": "Product filters <b>~40% faster</b>",
-    "p3Bar2": "Automated CI checks <b>over 2× faster</b>",
+    "p3Bar2": "Automated CI checks <b>over 2x faster</b>",
     "p3Tag": "Performance",
     "p3Title": "Find the real bottleneck, then fix it",
     "p3Text": "Grey bar is before, colored bar is after. Customers move faster, developers wait less.",
     "p4Row1": "orders, stock sync",
     "p4Row2": "shipments, COD",
-    "p4Row3Name": "SePay · VietQR · statements",
+    "p4Row3Name": "SePay, VietQR, statements",
     "p4Row3": "payments auto-matched",
     "p4Tag": "Integrations",
     "p4Title": "15+ external services",
-    "p4Text": "Marketplaces, shipping, payments, Zalo, Lark, MISA — plus automated reconciliation for accounting.",
+    "p4Text": "Marketplaces, shipping, payments, Zalo, Lark, MISA, plus automated reconciliation for accounting.",
     "p5Col1": "Project rules",
     "p5Col2": "Guard hooks",
     "p5Col3": "9 skills",
@@ -116,11 +116,11 @@
     "p5Text": "AI must read the real code before editing, risky operations are blocked automatically, and the whole team shares it.",
     "p6Row1": "fewer Google API calls",
     "p6Row2": "reused across projects",
-    "p6Row3Name": "Accounting CMS · ABA",
+    "p6Row3Name": "Accounting CMS, ABA",
     "p6Row3": "data, reports",
     "p6Tag": "Before Thinkpro",
     "p6Title": "Three early chapters",
-    "p6Text": "A Japanese product, outsourcing projects, accounting software — the groundwork for understanding many kinds of business."
+    "p6Text": "A Japanese product, outsourcing projects, accounting software. That was the groundwork for understanding many kinds of business."
   },
   "oss": {
     "eyebrow": "Open source",
@@ -143,11 +143,11 @@
   },
   "contact": {
     "eyebrow": "Contact",
-    "title": "Let’s build something that actually ships.",
+    "title": "Let's build something that actually ships.",
     "text": "Looking for a Frontend / Fullstack role at a product company in Hanoi.",
     "showPhone": "Show phone number"
   },
   "footer": {
-    "text": "© 2026 Vu Thanh Bay · Hanoi"
+    "text": "© 2026 Vu Thanh Bay, Hanoi"
   }
 }
