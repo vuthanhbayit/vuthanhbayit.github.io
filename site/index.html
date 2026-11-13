@@ -1,0 +1,725 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Vũ Thanh Bảy — Senior Frontend Engineer</title>
+<meta name="description" content="Gần 8 năm làm giao diện web với Vue / Nuxt. Dẫn dắt xây nền tảng bán lẻ đa site cùng AI: 1.060 PR đã gộp, kết nối hơn 15 dịch vụ." />
+<link rel="canonical" href="https://vuthanhbayit.github.io/" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://vuthanhbayit.github.io/" />
+<meta property="og:title" content="Vũ Thanh Bảy — Senior Frontend Engineer" />
+<meta property="og:description" content="Gần 8 năm làm giao diện web với Vue / Nuxt. Dẫn dắt xây nền tảng bán lẻ đa site cùng AI." />
+<meta name="theme-color" content="#f3f1e9" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%2320211c'/%3E%3Ctext x='16' y='22' font-family='Arial,sans-serif' font-size='17' font-weight='700' text-anchor='middle' fill='%23f3f1e9'%3EB%3C/text%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://api.fontshare.com" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://api.fontshare.com/v2/css?f[]=switzer@400,401,500,501,600&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<script>document.documentElement.classList.add('js')</script>
+<style>
+  :root {
+    --canvas: #f3f1e9; --canvas-alt: #eae8df; --surface: #faf9f4; --raised: #e3e1d7;
+    --ink: #20211c; --muted: #626459; --line-subtle: rgba(32,33,28,.13); --line: rgba(32,33,28,.22);
+    --accent: #e5ac82; --accent-ink: #241b15; --accent-strong: #99562f; --accent-soft: rgba(229,172,130,.14);
+    --success: #3c735b; --terminal: #11120f; --terminal-raised: #292a23; --terminal-text: #f2f0e8; --terminal-muted: #a5a69b; --terminal-success: #9ecbbb;
+    --container: 75rem; --radius: 12px; --ease: cubic-bezier(.22,1,.36,1);
+    --ui: 'Switzer', 'Be Vietnam Pro', -apple-system, 'Segoe UI', Arial, sans-serif;
+    --mono: 'JetBrains Mono', ui-monospace, Menlo, monospace;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { background: var(--canvas); scroll-behavior: smooth; }
+  body { font-family: var(--ui); color: var(--ink); line-height: 1.5; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+  a { color: inherit; text-decoration: none; }
+  #ribbon { position: fixed; inset: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none; opacity: .24;
+    -webkit-mask-image: radial-gradient(115% 85% at 50% 46%, #000 52%, transparent 100%); mask-image: radial-gradient(115% 85% at 50% 46%, #000 52%, transparent 100%); }
+  body::before { content: ''; position: fixed; inset: 0; z-index: 0; pointer-events: none;
+    background: radial-gradient(44% 40% at 12% 18%, rgba(229,172,130,.15), transparent 72%), radial-gradient(44% 40% at 88% 18%, rgba(229,172,130,.15), transparent 72%), radial-gradient(60% 38% at 50% 100%, rgba(229,172,130,.1), transparent 72%); }
+  header, main, footer { position: relative; z-index: 1; }
+  .wrap { max-width: var(--container); margin: 0 auto; padding: 0 28px; }
+
+  header { position: sticky; top: 0; z-index: 30; height: 60px; background: rgba(243,241,233,.92); backdrop-filter: blur(18px); border-bottom: 1px solid var(--line-subtle); }
+  header .wrap { height: 100%; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+  .brand { display: flex; align-items: center; gap: 10px; line-height: 1.15; }
+  .brand i { width: 28px; height: 28px; border-radius: 8px; background: var(--ink); color: var(--canvas); display: grid; place-items: center; font-style: normal; font-weight: 600; font-size: 14px; }
+  .brand b { display: block; font-weight: 600; font-size: 14px; letter-spacing: -.01em; }
+  .brand small { display: block; font-size: 10.5px; color: var(--muted); }
+  .nav { display: flex; align-items: center; gap: 6px; }
+  .nav a.link { font-size: 12.8px; color: var(--muted); padding: 8px 12px; border-radius: 999px; transition: color .2s, background .2s; }
+  .nav a.link:hover { color: var(--ink); background: var(--canvas-alt); }
+  #bar { position: absolute; left: 0; bottom: -1px; height: 2px; width: 0; background: var(--accent-strong); }
+
+  .btn { display: inline-flex; align-items: center; gap: 8px; height: 44px; padding: 0 20px; border-radius: 999px; font: 500 14px/1 var(--ui); letter-spacing: .01em; border: 1px solid var(--line); transition: transform .25s var(--ease), background .2s, border-color .2s; cursor: pointer; white-space: nowrap; }
+  .btn:hover { transform: translateY(-2px); border-color: rgba(32,33,28,.45); }
+  .btn.primary { background: var(--accent); color: var(--accent-ink); border-color: transparent; }
+  .btn.primary:hover { background: #dfa076; }
+  .btn.sm { height: 34px; padding: 0 14px; font-size: 12.8px; }
+  .btn.dark { background: var(--ink); color: var(--canvas); border-color: transparent; }
+
+  .hero { text-align: center; padding: 76px 0 150px; }
+  .pill { display: inline-flex; align-items: center; gap: 10px; padding: 5px 6px 5px 14px; border: 1px solid var(--line); border-radius: 999px; background: var(--surface); font-size: 12.8px; font-weight: 500; }
+  .pill::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--accent-strong); box-shadow: 0 0 0 4px var(--accent-soft); }
+  .pill a { background: var(--ink); color: var(--canvas); border-radius: 999px; padding: 4px 11px; font-weight: 600; }
+  h1 { font-weight: 500; font-size: clamp(46px, 7.2vw, 96px); line-height: .94; letter-spacing: -.05em; margin: 30px auto 22px; max-width: 14ch; }
+  .hero p.lead { color: var(--muted); font-size: clamp(15px, 1.3vw, 18px); max-width: 56ch; margin: 0 auto; }
+  .cta { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin-top: 30px; }
+  .trust { display: flex; gap: 22px; justify-content: center; flex-wrap: wrap; margin-top: 26px; font-size: 12.8px; color: var(--muted); }
+  .trust b { color: var(--ink); font-weight: 600; }
+
+  section { padding: 84px 0; }
+  .eyebrow { font-size: 11.5px; font-weight: 500; letter-spacing: .08em; text-transform: uppercase; color: var(--accent-strong); margin-bottom: 10px; }
+  h2 { font-weight: 500; font-size: clamp(32px, 4.2vw, 56px); line-height: .98; letter-spacing: -.04em; max-width: 18ch; }
+  h2 em { font-weight: 400; color: var(--muted); }
+  .sub { color: var(--muted); margin-top: 14px; max-width: 58ch; }
+
+  .panel { margin-top: 34px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); overflow: hidden; }
+  .statrow { display: grid; grid-template-columns: repeat(3, 1fr); border-bottom: 1px solid var(--line); }
+  .statrow div { display: flex; justify-content: space-between; align-items: baseline; padding: 14px 18px; font-size: 12.8px; color: var(--muted); }
+  .statrow div + div { border-left: 1px solid var(--line); }
+  .statrow b { color: var(--ink); font-weight: 600; font-size: 14px; font-variant-numeric: tabular-nums; }
+  .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; padding: 26px; }
+  .step { border: 1px solid var(--line); border-radius: var(--radius); background: var(--canvas); padding: 18px; display: flex; flex-direction: column; gap: 14px; transition: transform .35s var(--ease), border-color .2s; }
+  .step:hover, .bento:hover, .opt:hover { transform: translateY(-4px); border-color: rgba(32,33,28,.45); }
+  .steps > *, .opts > *, .grid2 > * { min-width: 0; }
+  .step-head { display: grid; grid-template-columns: 34px 1fr; gap: 12px; }
+  .no { width: 34px; height: 34px; border-radius: 50%; border: 1px solid var(--line); display: grid; place-items: center; font-size: 11px; font-weight: 600; color: var(--muted); }
+  .step h3 { font-size: 16px; font-weight: 600; letter-spacing: -.01em; }
+  .step p { font-size: 13.5px; color: var(--muted); margin-top: 2px; }
+
+  .term { background: var(--terminal); color: var(--terminal-text); border-radius: 10px; overflow: hidden; margin-top: auto; }
+  .term-bar { display: flex; align-items: center; gap: 6px; padding: 9px 12px; background: var(--terminal-raised); font: 400 10.5px var(--mono); color: var(--terminal-muted); }
+  .term-bar i { width: 8px; height: 8px; border-radius: 50%; background: #e0655a; }
+  .term-bar i:nth-child(2) { background: #e2b34c; } .term-bar i:nth-child(3) { background: #6fbf73; margin-right: 8px; }
+  .term-body { padding: 14px; font: 400 12px/1.75 var(--mono); min-height: 104px; }
+  .tl { white-space: pre-wrap; min-height: 21px; }
+  .tl.cmd { color: var(--accent); }
+  .tl.ok { color: var(--terminal-success); }
+  .tl.dim { color: var(--terminal-muted); }
+  .caret { display: inline-block; width: 7px; height: 14px; background: var(--accent); vertical-align: -2px; animation: blink 1s steps(1) infinite; }
+  @keyframes blink { 50% { opacity: 0; } }
+
+  .opts { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 34px; }
+  .opt { border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); padding: 26px; transition: transform .35s var(--ease), border-color .2s; }
+  .opt-top { display: flex; justify-content: space-between; align-items: baseline; }
+  .opt-top span { font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+  .opt-top b { font-size: 12px; color: var(--muted); font-weight: 500; }
+  .opt h3 { font-size: 26px; font-weight: 500; letter-spacing: -.03em; margin: 8px 0 6px; }
+  .opt > p { color: var(--muted); font-size: 14.5px; }
+  .stage { background: var(--terminal); border-radius: 10px; margin: 20px 0; height: 190px; position: relative; overflow: hidden; color: var(--terminal-text); display: grid; place-items: center; }
+  .stage::before { content: ''; position: absolute; inset: 0; background: radial-gradient(60% 80% at 50% 110%, rgba(229,172,130,.22), transparent 70%); }
+  .gauges { display: flex; gap: 34px; position: relative; }
+  .gauge { text-align: center; font-size: 11px; color: var(--terminal-muted); }
+  .gauge svg { width: 96px; height: 96px; display: block; margin-bottom: 6px; }
+  .gauge circle { fill: none; stroke-width: 6; }
+  .gauge .track { stroke: rgba(255,255,255,.1); }
+  .gauge .val { stroke: var(--terminal-success); stroke-linecap: round; stroke-dasharray: 264; stroke-dashoffset: 264; transform: rotate(-90deg); transform-origin: 50% 50%; transition: stroke-dashoffset 1.6s var(--ease) .3s; }
+  .in .gauge .val { stroke-dashoffset: 0; }
+  .gauge text { fill: var(--terminal-text); font: 500 26px var(--ui); text-anchor: middle; dominant-baseline: central; }
+  .flow { display: flex; align-items: center; gap: 0; position: relative; font-size: 11.5px; }
+  .flow span { border: 1px solid rgba(255,255,255,.18); border-radius: 8px; padding: 9px 11px; background: rgba(255,255,255,.04); white-space: nowrap; }
+  .flow i { width: 26px; height: 1px; background: repeating-linear-gradient(90deg, rgba(255,255,255,.45) 0 4px, transparent 4px 8px); position: relative; }
+  .flow i::after { content: ''; position: absolute; top: -2.5px; left: 0; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); animation: run 1.8s linear infinite; }
+  .flow i:nth-of-type(2)::after { animation-delay: .6s; } .flow i:nth-of-type(3)::after { animation-delay: 1.2s; }
+  @keyframes run { from { left: 0; opacity: 0; } 20% { opacity: 1; } to { left: 20px; opacity: 0; } }
+  .stage small { position: absolute; bottom: 12px; left: 0; right: 0; text-align: center; font-size: 10px; letter-spacing: .12em; text-transform: uppercase; color: var(--terminal-muted); }
+  ul.checks { list-style: none; display: grid; gap: 10px; font-size: 14.5px; }
+  ul.checks li { padding-left: 26px; position: relative; }
+  ul.checks li::before { content: '✓'; position: absolute; left: 2px; color: var(--success); font-weight: 600; }
+  ul.checks b { font-weight: 600; }
+  .earlier { margin-top: 18px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); }
+  .earlier div { display: grid; grid-template-columns: 110px 190px 1fr; gap: 14px; padding: 14px 20px; font-size: 14px; align-items: baseline; }
+  .earlier div + div { border-top: 1px solid var(--line-subtle); }
+  .earlier span { color: var(--muted); font-size: 12.8px; font-variant-numeric: tabular-nums; }
+  .earlier b { font-weight: 600; }
+  .earlier p { color: var(--muted); }
+
+  .gather { height: 280vh; padding: 0; }
+  .gather-sticky { position: sticky; top: 0; height: 100vh; overflow: hidden; display: grid; place-items: center; }
+  .gather-num { font-weight: 500; font-size: clamp(88px, 17vw, 240px); letter-spacing: -.06em; line-height: 1; font-variant-numeric: tabular-nums; position: relative; z-index: 2; text-align: center; }
+  .gather-num sup { color: var(--success); font-size: .62em; vertical-align: .22em; font-weight: 400; }
+  .gather-cap { position: absolute; left: 0; right: 0; top: calc(50% + clamp(50px, 9.6vw, 138px)); text-align: center; color: var(--muted); font-size: clamp(15px, 1.5vw, 20px); padding: 0 24px; opacity: 0; transform: translateY(12px); transition: opacity .6s, transform .6s var(--ease); z-index: 2; }
+  .gather-cap.on { opacity: 1; transform: none; }
+  .gather-cap b { color: var(--ink); font-weight: 600; }
+  .chip { position: absolute; left: 50%; top: 50%; padding: 6px 12px; border: 1px solid var(--line); border-radius: 999px; background: var(--surface); font-size: 12px; font-weight: 500; white-space: nowrap; opacity: 0; transform: translate(-50%, -50%) scale(.7); transition: opacity .5s, transform .7s var(--ease); z-index: 1; }
+  .chip.on { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+  .chip.on span { display: inline-block; animation: bob 5s ease-in-out infinite; animation-delay: var(--d); }
+  @keyframes bob { 50% { transform: translateY(-5px); } }
+
+  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 34px; }
+  .bento { border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); overflow: hidden; transition: transform .35s var(--ease), border-color .2s; }
+  .ill { height: 200px; border-bottom: 1px solid var(--line-subtle); background: linear-gradient(var(--line-subtle) 1px, transparent 1px) 0 0 / 22px 22px, linear-gradient(90deg, var(--line-subtle) 1px, transparent 1px) 0 0 / 22px 22px, var(--canvas-alt); display: grid; place-items: center; padding: 22px; position: relative; }
+  .b-foot { padding: 18px 20px 20px; display: grid; grid-template-columns: 38px 1fr auto; gap: 12px; }
+  .ico { width: 38px; height: 38px; border-radius: 10px; background: var(--accent-soft); border: 1px solid rgba(153,86,47,.25); display: grid; place-items: center; color: var(--accent-strong); font-size: 16px; }
+  .b-foot small { display: block; font-size: 10.5px; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+  .b-foot h3 { font-size: 17px; font-weight: 600; letter-spacing: -.01em; text-decoration: underline; text-decoration-color: var(--line); text-underline-offset: 4px; }
+  .b-foot .n { font-size: 20px; color: var(--muted); font-variant-numeric: tabular-nums; }
+  .b-foot p { grid-column: 1 / -1; color: var(--muted); font-size: 14px; }
+
+  .rows { width: min(360px, 100%); display: grid; gap: 8px; font-size: 12px; }
+  .rows div { padding: 9px 14px; border-radius: 999px; border: 1px solid var(--line-subtle); background: rgba(250,249,244,.7); color: var(--muted); display: flex; justify-content: space-between; gap: 10px; }
+  .rows div.hot { border-color: var(--accent-strong); background: var(--surface); color: var(--ink); box-shadow: 0 0 0 3px var(--accent-soft); }
+  .bars { width: min(380px, 100%); display: grid; gap: 14px; font-size: 11px; color: var(--muted); }
+  .bars label { display: flex; justify-content: space-between; margin-bottom: 5px; letter-spacing: .06em; text-transform: uppercase; }
+  .bars label b { color: var(--ink); font-weight: 600; }
+  .bar { height: 8px; border-radius: 999px; background: var(--raised); overflow: hidden; }
+  .bar i { display: block; height: 100%; width: 0; border-radius: 999px; background: var(--accent); transition: width 1.4s var(--ease) .2s; }
+  .bar i.old { background: rgba(32,33,28,.28); }
+  .in .bar i { width: var(--w); }
+  .fan { display: flex; align-items: center; gap: 0; font-size: 12px; }
+  .fan-col { display: grid; gap: 8px; }
+  .fan-col span { padding: 6px 12px; border: 1px solid var(--line); border-radius: 999px; background: var(--surface); white-space: nowrap; }
+  .fan svg { width: 70px; height: 150px; }
+  .fan svg path { fill: none; stroke: rgba(32,33,28,.4); stroke-dasharray: 3 4; }
+  .fan .hub { padding: 9px 14px; border-radius: 10px; background: var(--accent); color: var(--accent-ink); font-weight: 600; border: 1px solid var(--accent-strong); white-space: nowrap; }
+
+  .marq { margin-top: 30px; overflow: hidden; mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent); }
+  .marq div { display: flex; gap: 10px; width: max-content; animation: slide 38s linear infinite; padding: 5px 0; }
+  .marq div.rev { animation-direction: reverse; animation-duration: 46s; }
+  .marq span { padding: 8px 16px; border: 1px solid var(--line); border-radius: 999px; background: var(--surface); font: 500 13px var(--mono); white-space: nowrap; }
+  @keyframes slide { to { transform: translateX(-50%); } }
+
+  .skills { margin-top: 34px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); }
+  .skills div.r { display: grid; grid-template-columns: 200px 1fr; gap: 16px; padding: 18px 22px; align-items: start; }
+  .skills div.r + div.r { border-top: 1px solid var(--line-subtle); }
+  .skills b { font-weight: 600; font-size: 15px; display: block; }
+  .skills small { color: var(--muted); font-size: 12px; }
+  .tags { display: flex; flex-wrap: wrap; gap: 6px; }
+  .tags span { padding: 5px 12px; border: 1px solid var(--line); border-radius: 999px; font-size: 12.8px; background: var(--surface); }
+  .tags.ai span { background: var(--accent-soft); border-color: rgba(153,86,47,.3); }
+
+  .final { text-align: center; padding: 120px 0 110px; }
+  .final h2 { margin: 0 auto; max-width: 16ch; }
+  footer { border-top: 1px solid var(--line-subtle); padding: 22px 0 30px; font-size: 12.8px; color: var(--muted); }
+  footer .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
+
+  .panel, .opt, .bento, .earlier, .skills { background: color-mix(in srgb, var(--surface) 78%, transparent); }
+  .step { background: color-mix(in srgb, var(--canvas) 78%, transparent); }
+
+  .js .reveal { opacity: 0; transform: translateY(22px); transition: opacity .8s var(--ease), transform .8s var(--ease); transition-delay: var(--rd, 0s); }
+  .js .reveal.in { opacity: 1; transform: none; }
+
+  @media (max-width: 900px) {
+    .nav a.link { display: none; }
+    .steps, .opts, .grid2, .statrow { grid-template-columns: 1fr; }
+    .statrow div + div { border-left: 0; border-top: 1px solid var(--line); }
+    .steps { padding: 16px; }
+    .hero { padding: 54px 0 110px; }
+    section { padding: 60px 0; }
+    .earlier div { grid-template-columns: 1fr; gap: 2px; }
+    .skills div.r { grid-template-columns: 1fr; gap: 10px; }
+    .wrap { padding: 0 18px; }
+    .flow { font-size: 10.5px; }
+    .flow span { padding: 7px 7px; }
+    .flow i { width: 14px; }
+    .flow i::after { display: none; }
+    .gauges { gap: 22px; }
+    .nav .btn:not(.dark) { display: none; }
+    .brand small { white-space: nowrap; }
+    .chip { font-size: 11px; padding: 4px 9px; }
+    .opt { padding: 20px; }
+    .fan { font-size: 11px; }
+    .fan svg { width: 44px; }
+    .rows { font-size: 11px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .js .reveal { opacity: 1; transform: none; transition: none; }
+    .marq div, .flow i::after, .chip.on span, .caret { animation: none; }
+  }
+</style>
+</head>
+<body>
+<canvas id="ribbon" aria-hidden="true"></canvas>
+
+<header>
+  <div class="wrap">
+    <a class="brand" href="#top"><i>B</i><span><b>Vũ Thanh Bảy</b><small>Senior Frontend Engineer</small></span></a>
+    <nav class="nav">
+      <a class="link" href="#kinh-nghiem">Kinh nghiệm</a>
+      <a class="link" href="#du-an">Dự án</a>
+      <a class="link" href="#ma-nguon-mo">Mã nguồn mở</a>
+      <a class="btn sm" href="https://github.com/vuthanhbayit" target="_blank" rel="noopener">GitHub ↗</a>
+      <a class="btn sm dark" href="Vu-Thanh-Bay-CV.pdf" download>↓ Tải CV</a>
+    </nav>
+  </div>
+  <div id="bar"></div>
+</header>
+
+<main id="top">
+  <div class="hero wrap">
+    <span class="pill reveal">Đang tìm vị trí Frontend / Fullstack <a href="#lien-he">Liên hệ ↗</a></span>
+    <h1 class="reveal" style="--rd:.08s">Xin chào, tôi là Bảy.</h1>
+    <p class="lead reveal" style="--rd:.16s">Gần 8 năm làm giao diện web với Vue / Nuxt. Giờ tôi dẫn dắt xây cả một nền tảng bán lẻ — cùng AI, và tôi là người cầm lái.</p>
+    <div class="cta reveal" style="--rd:.24s">
+      <a class="btn primary" href="Vu-Thanh-Bay-CV.pdf" download>↓ Tải CV (PDF)</a>
+      <a class="btn" href="https://github.com/vuthanhbayit" target="_blank" rel="noopener">GitHub ↗</a>
+    </div>
+    <div class="trust reveal" style="--rd:.32s">
+      <span>✓ <b>1.060</b> PR đã gộp</span><span>✓ Lighthouse <b>100/100</b></span><span>✓ <b>31</b> gói npm</span>
+    </div>
+  </div>
+
+  <section>
+    <div class="wrap">
+      <div class="eyebrow reveal">Tóm tắt nhanh</div>
+      <h2 class="reveal">Làm giao diện, hiểu nghiệp vụ, cầm lái AI.</h2>
+      <div class="panel reveal">
+        <div class="statrow">
+          <div>Năm làm Vue / Nuxt <b>~<span data-count="8">8</span></b></div>
+          <div>PR đã gộp vào nền tảng mới <b><span data-count="1060">1.060</span></b></div>
+          <div>Dịch vụ ngoài đã kết nối <b><span data-count="15">15</span>+</b></div>
+        </div>
+        <div class="steps">
+          <div class="step">
+            <div class="step-head"><span class="no">01</span><div><h3>Giao diện</h3><p>Storefront thinkpro.vn bản V4 đạt điểm tuyệt đối về tốc độ, trên cả điện thoại lẫn máy tính.</p></div></div>
+            <div class="term"><div class="term-bar"><i></i><i></i><i></i>bay: lighthouse</div><div class="term-body">
+<div class="tl cmd">$ lighthouse thinkpro.vn   # bản V4</div><div class="tl">▸ tốc độ .... <span class="ok tl">100</span>  điện thoại + máy tính</div><div class="tl">▸ SEO ....... <span class="ok tl">100</span></div></div></div>
+          </div>
+          <div class="step">
+            <div class="step-head"><span class="no">02</span><div><h3>Nghiệp vụ</h3><p>Đơn hàng, kho, bảo hành, sàn, vận chuyển — tôi là tác giả phần lớn nền tảng bán lẻ mới.</p></div></div>
+            <div class="term"><div class="term-bar"><i></i><i></i><i></i>bay: github</div><div class="term-body">
+<div class="tl cmd">$ gh pr list --state merged --author @me | wc -l</div><div class="tl ok">1060</div><div class="tl dim"># ~72% trên 1.482 PR của dự án</div></div></div>
+          </div>
+          <div class="step">
+            <div class="step-head"><span class="no">03</span><div><h3>Cầm lái AI</h3><p>AI viết code theo luật tôi đặt. Tôi quyết kiến trúc, nghiệp vụ và rà soát trước khi gộp.</p></div></div>
+            <div class="term"><div class="term-bar"><i></i><i></i><i></i>bay: claude</div><div class="term-body">
+<div class="tl cmd">$ claude "thêm đối soát tiền thu hộ GHN"</div><div class="tl">▸ đọc code thật trước khi sửa <span class="ok tl">✓</span></div><div class="tl">▸ hook chặn lệnh nguy hiểm .. <span class="ok tl">✓</span></div><div class="tl">▸ tôi rà soát rồi mới gộp ... <span class="ok tl">✓</span></div></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="kinh-nghiem">
+    <div class="wrap">
+      <div class="eyebrow reveal">Kinh nghiệm · Thinkpro</div>
+      <h2 class="reveal" style="max-width:24ch">Tám năm Frontend.<br /><em>Một năm cầm lái cả hệ thống.</em></h2>
+      <div class="opts">
+        <div class="opt reveal">
+          <div class="opt-top"><span>Frontend Developer</span><b>04/2021 — 01/2026</b></div>
+          <h3>Storefront thinkpro.vn</h3>
+          <p>Xây qua 2 thế hệ, Nuxt 2 rồi Nuxt 3, tự viết khoảng 3/4 số code.</p>
+          <div class="stage"><div class="gauges">
+            <div class="gauge"><svg viewBox="0 0 96 96"><circle class="track" cx="48" cy="48" r="42" /><circle class="val" cx="48" cy="48" r="42" /><text x="48" y="48">100</text></svg>Tốc độ</div>
+            <div class="gauge"><svg viewBox="0 0 96 96"><circle class="track" cx="48" cy="48" r="42" /><circle class="val" cx="48" cy="48" r="42" /><text x="48" y="48">100</text></svg>SEO</div>
+          </div><small>Lighthouse · bản V4</small></div>
+          <ul class="checks">
+            <li>Điểm tốc độ <b>100/100</b> trên cả điện thoại lẫn máy tính</li>
+            <li>SEO kỹ thuật cùng đội marketing: dữ liệu có cấu trúc, sitemap, Merchant Center</li>
+            <li>CMS nội bộ, storefront GoodSpace, giao diện cho nice.design</li>
+          </ul>
+        </div>
+        <div class="opt reveal" style="--rd:.1s">
+          <div class="opt-top"><span>Kỹ sư dẫn dắt nền tảng mới</span><b>02/2026 — nay</b></div>
+          <h3>Nền tảng bán lẻ đa site</h3>
+          <p>Thay hệ cũ Laravel / MySQL bằng một bộ code Nuxt 4 phục vụ 4 site và 1 CMS.</p>
+          <div class="stage"><div class="flow"><span>Đơn hàng</span><i></i><span>Xuất kho</span><i></i><span>Giao vận</span><i></i><span>Hoá đơn</span></div><small>Chạy thật từ 19/08/2026</small></div>
+          <ul class="checks">
+            <li>Tác giả <b>1.060 / 1.482</b> PR đã gộp, hơn <b>260</b> bảng dữ liệu</li>
+            <li>Kết nối <b>15+</b> dịch vụ: sàn, vận chuyển, thanh toán, kế toán</li>
+            <li>Tự làm phần chuyển toàn bộ dữ liệu từ hệ cũ sang</li>
+          </ul>
+        </div>
+      </div>
+      <div class="earlier reveal">
+        <div><span>2020 — 2021</span><b>Azoom Việt Nam</b><p>CMS vận hành Azoom.jp, giảm chi phí gọi Google API cho carparking.jp</p></div>
+        <div><span>2019 — 2020</span><b>Amela</b><p>Base CMS dùng lại cho nhiều dự án outsource</p></div>
+        <div><span>2018 — 2019</span><b>ABA</b><p>Thực tập — CMS nghiệp vụ kế toán</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="gather" id="gather" aria-label="1.060 PR đã gộp">
+    <div class="gather-sticky">
+      <div class="gather-num"><span id="gnum">0</span><sup>+</sup></div>
+      <p class="gather-cap" id="gcap"><b>PR đã gộp vào nền tảng mới</b> — khoảng 72% của cả dự án, trong 9 tháng.</p>
+    </div>
+  </section>
+
+  <section id="du-an">
+    <div class="wrap">
+      <div class="eyebrow reveal">Dự án & tác động</div>
+      <h2 class="reveal">Việc tôi làm, đổi được gì.</h2>
+      <div class="grid2">
+        <div class="bento reveal">
+          <div class="ill"><div class="fan"><div class="fan-col"><span>ThinkPro</span><span>GoodSpace</span><span>nice.design</span><span>Leaf</span></div>
+            <svg viewBox="0 0 70 150"><path d="M0 16 C40 16 30 75 70 75" /><path d="M0 55 C35 55 35 75 70 75" /><path d="M0 95 C35 95 35 75 70 75" /><path d="M0 134 C40 134 30 75 70 75" /></svg>
+            <span class="hub">1 bộ code · Nuxt 4</span></div></div>
+          <div class="b-foot"><span class="ico">◈</span><div><small>Nền tảng</small><h3>Bốn site, một bộ code</h3></div><span class="n">01</span>
+            <p>Bốn thương hiệu dùng chung một nền tảng và một trang quản trị, thay vì mỗi site một hệ riêng.</p></div>
+        </div>
+        <div class="bento reveal" style="--rd:.08s">
+          <div class="ill"><div class="bars">
+            <div><label>Tốc độ · V4 <b>100 / 100</b></label><div class="bar"><i style="--w:100%"></i></div></div>
+            <div><label>SEO <b>100 / 100</b></label><div class="bar"><i style="--w:100%"></i></div></div>
+          </div></div>
+          <div class="b-foot"><span class="ico">◔</span><div><small>Storefront</small><h3>thinkpro.vn điểm tuyệt đối</h3></div><span class="n">02</span>
+            <p>Tối ưu ảnh, font, bố cục và độ nhạy thao tác theo từng trang; đo tốc độ từ chính khách thật.</p></div>
+        </div>
+        <div class="bento reveal">
+          <div class="ill"><div class="bars">
+            <div><label>Bộ lọc sản phẩm <b>nhanh hơn ~40%</b></label><div class="bar"><i class="old" style="--w:100%"></i></div><div class="bar" style="margin-top:5px"><i style="--w:61%"></i></div></div>
+            <div><label>Kiểm tra tự động trên CI <b>nhanh hơn gấp đôi</b></label><div class="bar"><i class="old" style="--w:100%"></i></div><div class="bar" style="margin-top:5px"><i style="--w:43%"></i></div></div>
+          </div></div>
+          <div class="b-foot"><span class="ico">⚡</span><div><small>Hiệu năng</small><h3>Tìm đúng chỗ chậm rồi xử lý</h3></div><span class="n">03</span>
+            <p>Thanh xám là trước, thanh màu là sau. Khách thao tác nhanh hơn, đội dev chờ ít hơn.</p></div>
+        </div>
+        <div class="bento reveal" style="--rd:.08s">
+          <div class="ill"><div class="rows">
+            <div>Shopee · TikTok Shop <span>đồng bộ đơn, tồn</span></div>
+            <div>GHN <span>vận đơn, tiền thu hộ</span></div>
+            <div class="hot">SePay · VietQR · sao kê <span>tiền về tự khớp</span></div>
+          </div></div>
+          <div class="b-foot"><span class="ico">⇄</span><div><small>Tích hợp</small><h3>Hơn 15 dịch vụ ngoài</h3></div><span class="n">04</span>
+            <p>Sàn, vận chuyển, thanh toán, Zalo, Lark, MISA — và đối soát tự động cho phòng kế toán.</p></div>
+        </div>
+        <div class="bento reveal">
+          <div class="ill"><div class="fan"><div class="fan-col"><span>Luật dự án</span><span>Hook chặn</span><span>9 skill</span><span>9 agent</span></div>
+            <svg viewBox="0 0 70 150"><path d="M0 16 C40 16 30 75 70 75" /><path d="M0 55 C35 55 35 75 70 75" /><path d="M0 95 C35 95 35 75 70 75" /><path d="M0 134 C40 134 30 75 70 75" /></svg>
+            <span class="hub">Tôi rà soát</span></div></div>
+          <div class="b-foot"><span class="ico">✳</span><div><small>Cách làm việc</small><h3>Quy trình làm việc cùng AI</h3></div><span class="n">05</span>
+            <p>AI phải đọc code thật trước khi sửa, thao tác nguy hiểm bị chặn tự động, cả nhóm dùng chung.</p></div>
+        </div>
+        <div class="bento reveal" style="--rd:.08s">
+          <div class="ill"><div class="rows">
+            <div>carparking.jp <span>giảm gọi Google API</span></div>
+            <div>Base CMS · Amela <span>dùng lại nhiều dự án</span></div>
+            <div>CMS kế toán · ABA <span>dữ liệu, báo cáo</span></div>
+          </div></div>
+          <div class="b-foot"><span class="ico">◷</span><div><small>Trước Thinkpro</small><h3>Ba chặng đầu nghề</h3></div><span class="n">06</span>
+            <p>Sản phẩm Nhật, dự án outsource, phần mềm kế toán — nền để hiểu nhiều kiểu nghiệp vụ.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="ma-nguon-mo">
+    <div class="wrap">
+      <div class="eyebrow reveal">Mã nguồn mở</div>
+      <h2 class="reveal">Những thứ tôi chia sẻ.</h2>
+      <div class="panel reveal">
+        <div class="statrow" style="border-bottom:0">
+          <div>Gói npm đã xuất bản <b><span data-count="31">31</span></b></div>
+          <div>Lượt tải 12 tháng qua <b>~<span data-count="30">30</span>k</b></div>
+          <div>Tài khoản npm <b>vt7</b></div>
+        </div>
+      </div>
+    </div>
+    <div class="marq" aria-hidden="true">
+      <div><span>@vt7/utils</span><span>@vt7/composables</span><span>@vt7/think-tiptap</span><span>notion-tap</span><span>vue3-auth</span><span>@vt7/fetch</span><span>@vt7/tailwind-purge-icon</span><span>@vt7/utils</span><span>@vt7/composables</span><span>@vt7/think-tiptap</span><span>notion-tap</span><span>vue3-auth</span><span>@vt7/fetch</span><span>@vt7/tailwind-purge-icon</span></div>
+      <div class="rev"><span>vue3-auth</span><span>@vt7/fetch</span><span>notion-tap</span><span>@vt7/utils</span><span>@vt7/tailwind-purge-icon</span><span>@vt7/composables</span><span>@vt7/think-tiptap</span><span>vue3-auth</span><span>@vt7/fetch</span><span>notion-tap</span><span>@vt7/utils</span><span>@vt7/tailwind-purge-icon</span><span>@vt7/composables</span><span>@vt7/think-tiptap</span></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="eyebrow reveal">Kỹ năng</div>
+      <h2 class="reveal">Ghi đúng mức mình làm được.</h2>
+      <div class="skills reveal">
+        <div class="r"><div><b>Thành thạo</b><small>tự làm, tự chịu trách nhiệm</small></div><div class="tags"><span>Vue 3</span><span>Nuxt 4</span><span>TypeScript</span><span>Tailwind CSS 4</span><span>Nuxt UI</span><span>Vite</span><span>Core Web Vitals</span><span>SEO kỹ thuật</span><span>Figma</span></div></div>
+        <div class="r"><div><b>Xây cùng AI</b><small>tôi thiết kế, quyết định, rà soát</small></div><div class="tags ai"><span>Node.js / Nitro</span><span>PostgreSQL</span><span>Prisma</span><span>Redis</span><span>BullMQ</span><span>Meilisearch</span><span>Kubernetes</span><span>Jenkins</span><span>GitHub Actions</span></div></div>
+        <div class="r"><div><b>Làm việc với AI</b><small>công cụ hằng ngày</small></div><div class="tags"><span>Claude Code</span><span>Viết luật & hook cho AI</span></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="final" id="lien-he">
+    <div class="wrap">
+      <div class="eyebrow reveal">Liên hệ</div>
+      <h2 class="reveal">Cùng làm điều gì đó chạy thật nhé.</h2>
+      <p class="sub reveal" style="margin-left:auto;margin-right:auto">Đang tìm vị trí Frontend / Fullstack tại công ty sản phẩm, ở Hà Nội.</p>
+      <div class="cta reveal">
+        <a class="btn primary" href="Vu-Thanh-Bay-CV.pdf" download>↓ Tải CV (PDF)</a>
+        <a class="btn" href="mailto:vuthanhbayit@gmail.com">vuthanhbayit@gmail.com</a>
+        <a class="btn" href="https://github.com/vuthanhbayit" target="_blank" rel="noopener">GitHub ↗</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer><div class="wrap"><span>© 2026 Vũ Thanh Bảy · Hà Nội</span></div></footer>
+
+<script>
+const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches
+const fmt = new Intl.NumberFormat('vi-VN')
+const clamp = (v, a = 0, b = 1) => Math.min(b, Math.max(a, v))
+const easeOut = (t) => 1 - Math.pow(1 - t, 3)
+
+// Băng giấy 3D: tính hình khối từng lát băng (vị trí, độ nghiêng, ánh sáng) rồi vẽ từng mảnh lên canvas
+const rc = document.getElementById('ribbon'), rx = rc.getContext('2d')
+let W = 0, H = 0, DPR = 1, U = 1, SCALE = 1, ribbons = []
+const TOKENS = ['Vue', '*', 'Nuxt', 'o', 'TS', '~', 'Node', '+', 'SQL', '*', 'Redis', 'o', 'AI', '~']
+const DS = 6, PAR = 0.88, ROLL = 0.6
+const P01 = (a, b, v) => { const k = clamp((v - a) / (b - a)); return k * k * (3 - 2 * k) }
+const KEY = [0, 0.5145, 0.8575], FILL = [0, -0.5735, 0.8192], HALF = [0, 0.2669, 0.9637]
+const COPPER = [0.72, 0.47, 0.28], IVORY = [0.98, 0.91, 0.78], WARM = [1.12, 0.92, 0.74]
+const fx = { time: 0, last: 0, power: 0, powerTo: 0, cx: -1e4, cy: -1e4, px: 0, py: 0, pxTo: 0, pyTo: 0, flutter: 0, lastScroll: scrollY, pulseX: -1e4, pulseY: -1e4, pulseAge: 99 }
+
+function makeRibbon(o, prev) {
+  const pageH = document.documentElement.scrollHeight
+  const cx = W / 2, amp = W * (W < 720 ? o.ampK + 0.04 : o.ampK), norm = Math.tanh(2.4)
+  const xs = [], ys = [], cum = [0]
+  for (let y = -300; y <= pageH + 300; y += 4) {
+    xs.push(cx + amp * Math.tanh(2.4 * Math.sin(y / o.L + o.phase)) / norm); ys.push(y)
+    const k = xs.length - 1
+    if (k) cum.push(cum[k - 1] + Math.hypot(xs[k] - xs[k - 1], ys[k] - ys[k - 1]))
+  }
+  // Chia lại đường đi thành các mốc cách đều nhau theo chiều dài băng
+  const n = Math.floor(cum[cum.length - 1] / DS) + 1
+  const PX = new Float32Array(n), PY = new Float32Array(n), TX = new Float32Array(n), TY = new Float32Array(n), FOLD = new Float32Array(n)
+  for (let i = 0, j = 0; i < n; i++) {
+    const s = i * DS
+    while (j < cum.length - 2 && cum[j + 1] < s) j++
+    const f = (s - cum[j]) / (cum[j + 1] - cum[j] || 1)
+    PX[i] = xs[j] + (xs[j + 1] - xs[j]) * f; PY[i] = ys[j] + (ys[j + 1] - ys[j]) * f
+  }
+  for (let i = 0; i < n; i++) {
+    const a = Math.max(0, i - 1), b = Math.min(n - 1, i + 1), dx = PX[b] - PX[a], dy = PY[b] - PY[a], d = Math.hypot(dx, dy) || 1
+    TX[i] = dx / d; TY[i] = dy / d
+    // Băng nằm phẳng khi chạy dọc hoặc ngang, nghiêng dần khi chạy chéo
+    FOLD[i] = 0.9 * Math.sin(2 * Math.atan2(dy, dx))
+  }
+  const total = (n - 1) * DS
+  return { ...o, n, PX, PY, TX, TY, FOLD, total, head: prev ? Math.min(prev.head, total) : 0 }
+}
+function indexAtY(r, y) {
+  let lo = 0, hi = r.n - 1
+  while (lo < hi) { const m = (lo + hi) >> 1; r.PY[m] < y ? (lo = m + 1) : (hi = m) }
+  return lo
+}
+function arcAtY(r, y) {
+  const i = Math.max(1, indexAtY(r, y)), a = r.PY[i - 1], b = r.PY[i]
+  return (i - 1 + clamp((y - a) / (b - a || 1))) * DS
+}
+function buildRibbons() {
+  DPR = Math.min(devicePixelRatio || 1, 1.5)
+  W = innerWidth; H = innerHeight; U = H / 2; SCALE = clamp(W / H / 1.5, 0.5, 1)
+  rc.width = Math.round(W * DPR); rc.height = Math.round(H * DPR)
+  const old = ribbons
+  ribbons = [
+    makeRibbon({ phase: -2.39, L: 430, ampK: 0.455, widthK: 1, seed: 0, gap: 150 }, old[0]),
+    makeRibbon({ phase: 1.0, L: 610, ampK: 0.45, widthK: 0.82, seed: 2.1, gap: 170 }, old[1]),
+  ]
+}
+// Một lát băng tại mốc i: tâm, nửa bề ngang (vectơ 3D), pháp tuyến, mức cuộn
+function sample(r, i, t, syR) {
+  const s = i * DS, su = s / U
+  const fi = Math.min(s, r.head) / DS, i0 = Math.min(r.n - 2, Math.floor(fi)), fr = fi - i0
+  let x = r.PX[i0] + (r.PX[i0 + 1] - r.PX[i0]) * fr, y = r.PY[i0] + (r.PY[i0 + 1] - r.PY[i0]) * fr - syR, z = 0
+  let tx = r.TX[i0] + (r.TX[i0 + 1] - r.TX[i0]) * fr, ty = r.TY[i0] + (r.TY[i0 + 1] - r.TY[i0]) * fr
+  const tl = Math.hypot(tx, ty) || 1; tx /= tl; ty /= tl
+  // Băng «thở» nhẹ, lắc chậm, và rung khi cuộn trang nhanh
+  x += 0.03 * SCALE * U * Math.sin(su * 0.8 + t * 0.35 + r.seed); z += 0.04 * U * Math.sin(su * 1.1 + t * 0.3)
+  let fold = r.FOLD[i0] + (r.FOLD[i0 + 1] - r.FOLD[i0]) * fr + 0.25 * Math.sin(t * 0.18 + r.seed) + fx.flutter * 0.7 * Math.sin(su * 2 + t * 5)
+  // Gần con trỏ: băng bị đẩy lệch ra, nhô lên và nghiêng đi
+  const dx = x - fx.cx, dy = y - fx.cy, hov = fx.power * Math.exp(-(dx * dx + dy * dy) / (0.08 * U * U))
+  x += dx * hov * 0.5; y += dy * hov * 0.5; z += hov * 0.3 * U; fold += hov * 1.7
+  // Bấm chuột: một vòng sóng lan ra trên băng
+  if (fx.pulseAge < 4) {
+    const rip = Math.hypot(x - fx.pulseX, y + syR - fx.pulseY) - fx.pulseAge * 1.4 * U
+    const wave = Math.exp(-(rip * rip) / (0.015 * U * U)) * Math.exp(-fx.pulseAge * 1.6)
+    z += wave * 0.22 * U; fold += wave * 0.9
+  }
+  const cf = Math.cos(fold), sf = Math.sin(fold)
+  const hw = 0.13 * SCALE * U * r.widthK * (0.9 + 0.1 * Math.cos(su * 1.5)) * P01(0, 0.55, su)
+  let nx = ty * sf, ny = -tx * sf, nz = -cf, curl = 0
+  // Phần băng chưa trải: cuốn thành một lọn lỏng nằm ngay đầu băng
+  if (s > r.head) {
+    const span = ROLL * U, rolled = clamp((s - r.head) / span) * span, sg = nz >= 0 ? 1 : -1
+    const ox = nx * sg, oy = ny * sg, oz = nz * sg
+    const rad = 0.08 * SCALE * U * (1 - (0.3 * rolled) / span), th = rolled / rad, st = Math.sin(th), ct = Math.cos(th)
+    x += tx * rad * st + ox * rad * (1 - ct); y += ty * rad * st + oy * rad * (1 - ct); z += oz * rad * (1 - ct)
+    nx = ox * ct - tx * st; ny = oy * ct - ty * st; nz = oz * ct
+    curl = P01(0, 0.15 * U, rolled)
+  }
+  x += fx.px * 0.035 * U; z += fx.py * 0.03 * U
+  return [x, y, z, ty * cf * hw, -tx * cf * hw, sf * hw, nx, ny, nz, curl, su, hw]
+}
+const proj = (x, y, z) => { const w = 1 - (z / U) * 0.18; return [W / 2 + (x - W / 2) / w, H / 2 + (y - H / 2) / w] }
+// Màu một mảnh băng theo hướng mặt băng so với đèn: mặt đồng sẫm, mặt ngà sáng
+function shade(nx, ny, nz, curl, su, warmth) {
+  const l = Math.hypot(nx, ny, nz) || 1; nx /= l; ny /= l; nz /= l
+  const diffuse = Math.max(0, ny * KEY[1] + nz * KEY[2]), fill = Math.max(0, ny * FILL[1] + nz * FILL[2])
+  const facing = P01(-0.25, 0.8, nz), spec = Math.pow(Math.max(0, ny * HALF[1] + nz * HALF[2]), 27) * (1 - curl)
+  const flat = 0.42 + diffuse * 0.6 + fill * 0.14, light = (flat + (0.62 + diffuse * 0.3 - flat) * curl) * (0.98 + Math.sin(su * 30) * 0.02)
+  const m = facing * 0.52, c = [0, 0, 0]
+  for (let k = 0; k < 3; k++) c[k] = Math.round(clamp(((COPPER[k] + (IVORY[k] - COPPER[k]) * m) * light + IVORY[k] * spec * 0.21) * (1 + (WARM[k] - 1) * warmth)) * 255)
+  return { fill: `rgb(${c[0]},${c[1]},${c[2]})`, diffuse, facing }
+}
+function mark(k, s, hw) {
+  const tok = TOKENS[((k % TOKENS.length) + TOKENS.length) % TOKENS.length], g = hw * 0.4
+  rx.lineWidth = Math.max(2, g * 0.16); rx.lineCap = 'round'
+  if (tok === '*') { for (let i = 0; i < 3; i++) { const a = (i * Math.PI) / 3; rx.beginPath(); rx.moveTo(-Math.cos(a) * g, -Math.sin(a) * g); rx.lineTo(Math.cos(a) * g, Math.sin(a) * g); rx.stroke() } }
+  else if (tok === '+') { rx.beginPath(); for (let i = 0; i < 8; i++) { const q = i % 2 ? g * 0.3 : g * 1.2, a = (i * Math.PI) / 4; rx.lineTo(Math.cos(a) * q, Math.sin(a) * q) } rx.closePath(); rx.fill() }
+  else if (tok === 'o') { rx.beginPath(); rx.arc(0, 0, g * 0.95, 0, 7); rx.stroke(); rx.beginPath(); rx.arc(0, 0, g * 0.32, 0, 7); rx.fill() }
+  else if (tok === '~') { for (let j = -1; j <= 1; j++) { rx.beginPath(); for (let i = -10; i <= 10; i++) { const px = (i / 10) * g * 1.1, py = j * g * 0.55 + Math.sin((i / 10) * Math.PI * 2) * g * 0.18; i === -10 ? rx.moveTo(px, py) : rx.lineTo(px, py) } rx.stroke() } }
+  else { rx.font = `600 ${Math.round(g * 1.25)}px Switzer, 'Be Vietnam Pro', sans-serif`; rx.textAlign = 'center'; rx.textBaseline = 'middle'; rx.fillText(tok, 0, 0) }
+}
+function drawRibbons(now) {
+  const dt = fx.last ? Math.min(0.05, Math.max(0, (now - fx.last) / 1000)) : 0
+  fx.last = now
+  const sy = scrollY, prog = clamp(sy / Math.max(1, document.documentElement.scrollHeight - H)), syR = sy * PAR
+  if (!reduce) {
+    const k4 = 1 - Math.exp(-4 * dt), k5 = 1 - Math.exp(-5 * dt)
+    fx.time += dt; fx.pulseAge += dt
+    fx.px += (fx.pxTo - fx.px) * k4; fx.py += (fx.pyTo - fx.py) * k4; fx.power += (fx.powerTo - fx.power) * k5
+    if (dt > 0) fx.flutter += (Math.min(1, (0.35 * Math.abs(sy - fx.lastScroll)) / H / dt) - fx.flutter) * k4
+  }
+  fx.lastScroll = sy
+  const t = reduce ? 8 : fx.time
+  // Đầu trang băng đậm và ấm hơn, giữa trang nhạt đi để không tranh với nội dung
+  const mid = P01(0.03, 0.14, prog) * (1 - P01(0.86, 0.97, prog)), end = P01(0.86, 0.97, prog), base = 0.24 * (1 - end) + 0.2 * end
+  rc.style.opacity = (base + (0.12 - base) * mid).toFixed(3)
+  const warmth = 1 - P01(0.03, 0.14, prog)
+  rx.setTransform(DPR, 0, 0, DPR, 0, 0); rx.clearRect(0, 0, W, H)
+  const flat = [], curls = [], marks = []
+  for (const r of ribbons) {
+    const target = arcAtY(r, syR + H * (0.62 + 0.78 * P01(0.88, 1, prog)))
+    r.head = reduce ? r.total : r.head + (target - r.head) * (1 - Math.exp(-5 * dt))
+    const ia = Math.max(1, indexAtY(r, syR - 0.6 * U)), ib = Math.min(r.n - 2, indexAtY(r, syR + H + 0.6 * U))
+    const iHead = Math.floor(r.head / DS), last = iHead <= ib ? Math.min(r.n - 2, Math.ceil((r.head + ROLL * U) / DS)) : ib
+    if (last <= ia) continue
+    const S = []
+    for (let i = ia; i <= last; i++) {
+      const m = sample(r, i, t, syR)
+      S.push({ m, L: proj(m[0] + m[3], m[1] + m[4], m[2] + m[5]), R: proj(m[0] - m[3], m[1] - m[4], m[2] - m[5]) })
+    }
+    for (let k = 1; k < S.length; k++) {
+      const a = S[k - 1], b = S[k], curl = (a.m[9] + b.m[9]) / 2
+      const q = { a, b, z: (a.m[2] + b.m[2]) / 2, fill: shade(a.m[6] + b.m[6], a.m[7] + b.m[7], a.m[8] + b.m[8], curl, b.m[10], warmth).fill }
+      ;(curl > 0 ? curls : flat).push(q)
+    }
+    // Hình in trên băng: chỉ in trên phần đã trải
+    const sMax = Math.min(r.head - r.gap * 0.2, (last - 1) * DS)
+    for (let k = Math.max(1, Math.ceil(((ia + 1) * DS) / r.gap)); k * r.gap <= sMax; k++) {
+      const j = Math.round((k * r.gap) / DS) - ia
+      if (j < 1 || j > S.length - 2) continue
+      marks.push({ k, p: S[j], prev: S[j - 1], next: S[j + 1], warmth })
+    }
+  }
+  const paint = (q) => {
+    rx.beginPath(); rx.moveTo(q.a.L[0], q.a.L[1]); rx.lineTo(q.b.L[0], q.b.L[1]); rx.lineTo(q.b.R[0], q.b.R[1]); rx.lineTo(q.a.R[0], q.a.R[1]); rx.closePath()
+    rx.fillStyle = rx.strokeStyle = q.fill; rx.fill(); rx.stroke()
+  }
+  rx.lineWidth = 1; rx.lineJoin = 'round'
+  flat.sort((p, q) => p.z - q.z).forEach(paint)
+  for (const mk of marks) {
+    const { m, L, R } = mk.p, hw = m[11]
+    if (hw < 4) continue
+    const ax = (L[0] - R[0]) / (2 * hw), ay = (L[1] - R[1]) / (2 * hw)
+    if (Math.hypot(ax, ay) < 0.2) continue
+    const bx = (mk.next.L[0] + mk.next.R[0] - mk.prev.L[0] - mk.prev.R[0]) / (4 * DS), by = (mk.next.L[1] + mk.next.R[1] - mk.prev.L[1] - mk.prev.R[1]) / (4 * DS)
+    const sh = shade(m[6], m[7], m[8], 0, m[10], 0), lum = 0.78 + sh.diffuse * 0.22 + sh.facing * 0.08
+    rx.setTransform(DPR * ax, DPR * ay, DPR * bx, DPR * by, (DPR * (L[0] + R[0])) / 2, (DPR * (L[1] + R[1])) / 2)
+    rx.fillStyle = rx.strokeStyle = `rgb(${Math.round(IVORY[0] * lum * 255)},${Math.round(IVORY[1] * lum * 255)},${Math.round(IVORY[2] * lum * 255)})`
+    mark(mk.k, m[10], hw)
+  }
+  rx.setTransform(DPR, 0, 0, DPR, 0, 0); rx.lineWidth = 1
+  curls.sort((p, q) => p.z - q.z).forEach(paint)
+}
+// Chuột: di gần thì băng né và nghiêng, bấm thì gợn sóng; rời trang thì băng trở lại yên
+const finePointer = matchMedia('(pointer: fine)')
+addEventListener('pointermove', (e) => {
+  if (!finePointer.matches || reduce) return
+  fx.pxTo = clamp((e.clientX / W) * 2 - 1, -1, 1); fx.pyTo = clamp((e.clientY / H) * 2 - 1, -1, 1)
+  fx.cx = e.clientX; fx.cy = e.clientY; fx.powerTo = 1
+}, { passive: true })
+addEventListener('pointerdown', (e) => { if (reduce) return; fx.pulseX = e.clientX; fx.pulseY = e.clientY + scrollY * PAR; fx.pulseAge = 0 }, { passive: true })
+const calmRibbon = () => { fx.pxTo = 0; fx.pyTo = 0; fx.powerTo = 0 }
+addEventListener('blur', calmRibbon); document.documentElement.addEventListener('pointerleave', calmRibbon)
+
+// Thanh tiến độ cuộn
+const bar = document.getElementById('bar')
+
+// Cảnh số lớn đếm theo lúc cuộn
+const gather = document.getElementById('gather'), gnum = document.getElementById('gnum'), gcap = document.getElementById('gcap')
+const CHIPS = ['Shopee', 'TikTok Shop', 'GHN', 'SePay', 'VietQR', 'Zalo', 'Lark', 'VNPT ePay', 'MISA', 'PostgreSQL', 'Prisma', 'Redis', 'BullMQ', 'Meilisearch', 'Nuxt 4', 'Vue 3', 'TypeScript', 'Kubernetes', 'Jenkins', 'GitHub Actions', 'Sentry', 'S3']
+const sticky = gather.querySelector('.gather-sticky')
+const chips = CHIPS.map((label, i) => {
+  const el = document.createElement('div'); el.className = 'chip'
+  el.innerHTML = `<span style="--d:${(-i * 0.37).toFixed(2)}s">${label}</span>`
+  sticky.appendChild(el)
+  return { el, at: 0.06 + 0.72 * (((i * 7) % CHIPS.length) / CHIPS.length) }
+})
+function layoutChips() {
+  const narrow = innerWidth < 720, N = chips.length, half = N / 2
+  chips.forEach((c, i) => {
+    let a, ring
+    if (narrow) {
+      const top = i < half, j = i % half, row = Math.floor(j / 3), col = j % 3
+      const x = row === 3 ? [32, 68][col] : [18, 50, 82][col] + (row % 2 ? 3 : -2)
+      c.el.style.left = x + '%'
+      c.el.style.top = `calc(50% ${top ? '-' : '+'} ${(16 + row * 6.2 + (top ? 0 : 2)).toFixed(1)}vh)`
+      return
+    } else { a = (i / N) * Math.PI * 2 + 0.13; ring = i % 2 ? 0.72 : 1 }
+    c.el.style.left = `calc(50% + ${(Math.cos(a) * ring).toFixed(3)} * min(44vw, 600px))`
+    c.el.style.top = `calc(50% + ${(Math.sin(a) * ring).toFixed(3)} * 40vh)`
+  })
+}
+layoutChips()
+function updateGather() {
+  const rect = gather.getBoundingClientRect()
+  const p = clamp(-rect.top / (rect.height - innerHeight))
+  gnum.textContent = fmt.format(Math.round(1060 * easeOut(clamp(p / 0.82))))
+  chips.forEach((c) => c.el.classList.toggle('on', p > c.at))
+  gcap.classList.toggle('on', p > 0.8)
+}
+
+function onScroll() {
+  const max = document.documentElement.scrollHeight - innerHeight
+  bar.style.width = (max > 0 ? (scrollY / max) * 100 : 0) + '%'
+  updateGather()
+  revealVisible()
+}
+addEventListener('scroll', onScroll, { passive: true })
+
+// Hiện dần khi cuộn tới, kèm số đếm lên và terminal tự gõ
+function countUp(el) {
+  const to = +el.dataset.count
+  if (reduce) { el.textContent = fmt.format(to); return }
+  const t0 = performance.now()
+  const step = (now) => { const k = clamp((now - t0) / 1400); el.textContent = fmt.format(Math.round(to * easeOut(k))); if (k < 1) requestAnimationFrame(step) }
+  requestAnimationFrame(step)
+}
+function typeTerm(term) {
+  const lines = [...term.querySelectorAll('.term-body > .tl')]
+  if (reduce) return
+  const cmd = lines[0], text = cmd.textContent
+  lines.slice(1).forEach((l) => (l.style.visibility = 'hidden'))
+  cmd.textContent = ''
+  const caret = document.createElement('span'); caret.className = 'caret'
+  let i = 0
+  const tick = () => {
+    cmd.textContent = text.slice(0, i); cmd.appendChild(caret)
+    if (i++ < text.length) return setTimeout(tick, 26)
+    caret.remove()
+    lines.slice(1).forEach((l, k) => setTimeout(() => (l.style.visibility = 'visible'), 260 * (k + 1)))
+  }
+  setTimeout(tick, 350)
+}
+let pending = [...document.querySelectorAll('.reveal')]
+function revealVisible() {
+  if (!pending.length) return
+  const limit = innerHeight * 0.9
+  pending = pending.filter((el) => {
+    if (el.getBoundingClientRect().top > limit) return true
+    el.classList.add('in')
+    el.querySelectorAll('[data-count]').forEach(countUp)
+    el.querySelectorAll('.term').forEach((t, k) => setTimeout(() => typeTerm(t), k * 500))
+    return false
+  })
+}
+
+let lastH = 0
+function frame(now) {
+  const h = document.documentElement.scrollHeight
+  if (h !== lastH) { lastH = h; buildRibbons() }
+  drawRibbons(now)
+  requestAnimationFrame(frame)
+}
+addEventListener('resize', () => { buildRibbons(); layoutChips(); onScroll() })
+buildRibbons(); onScroll(); requestAnimationFrame(frame)
+</script>
+</body>
+</html>
