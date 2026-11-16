@@ -6,9 +6,11 @@ import { cpSync, mkdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs'
 const SITE = 'https://vuthanhbayit.github.io/'
 // Ngôn ngữ đứng đầu nằm ở gốc trang; thêm ngôn ngữ = thêm một dòng ở đây + một file lang/<mã>.json
 const LANGS = [
-  { code: 'vi', dir: '', label: 'VI' },
-  { code: 'en', dir: 'en/', label: 'EN' },
+  { code: 'en', dir: '', label: 'EN' },
+  { code: 'vi', dir: 'vi/', label: 'VI' },
 ]
+// Đường dẫn cũ đã gửi cho người khác (LinkedIn, CV) vẫn mở được, tự chuyển sang chỗ mới
+const REDIRECTS = [{ from: 'en/', to: '' }]
 const OUT = 'dist'
 
 const template = readFileSync('src/index.html', 'utf8')
@@ -77,4 +79,25 @@ for (const lang of LANGS) {
   mkdirSync(`${OUT}/${lang.dir}`, { recursive: true })
   writeFileSync(`${OUT}/${lang.dir}index.html`, render(lang))
   console.log(`xong ${OUT}/${lang.dir}index.html (${lang.code})`)
+}
+
+for (const { from, to } of REDIRECTS) {
+  const target = '../'.repeat(from.split('/').filter(Boolean).length) + to
+  const html = `<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Vu Thanh Bay</title>
+<meta name="robots" content="noindex" />
+<link rel="canonical" href="${SITE}${to}" />
+<script>location.replace(${JSON.stringify(target)} + location.hash)</script>
+<meta http-equiv="refresh" content="0; url=${target}" />
+</head>
+<body><a href="${target}">${SITE}${to}</a></body>
+</html>
+`
+  mkdirSync(`${OUT}/${from}`, { recursive: true })
+  writeFileSync(`${OUT}/${from}index.html`, html)
+  console.log(`xong ${OUT}/${from}index.html (chuyển sang /${to})`)
 }
