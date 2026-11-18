@@ -4,36 +4,37 @@
     "ogLocale": "vi_VN",
     "numberLocale": "vi-VN",
     "phoneIntl": false,
-    "title": "Vũ Thanh Bảy | Senior Frontend Engineer",
-    "description": "Gần 8 năm làm giao diện web với Vue / Nuxt. Dẫn dắt xây nền tảng bán lẻ đa site cùng AI: 1.060 PR đã gộp, kết nối hơn 15 dịch vụ.",
-    "ogDescription": "Gần 8 năm làm giao diện web với Vue / Nuxt. Dẫn dắt xây nền tảng bán lẻ đa site cùng AI."
+    "title": "Vũ Thanh Bảy | Fullstack Engineer",
+    "description": "Fullstack engineer, 8 năm làm web với Vue / Nuxt. Xây nền tảng bán lẻ đa site đang chạy thật: 1.060 PR đã gộp, kết nối hơn 15 dịch vụ.",
+    "ogDescription": "Fullstack engineer. Xây trọn nền tảng bán lẻ đa site đang chạy thật."
   },
   "brand": {
-    "name": "Vũ Thanh Bảy"
+    "name": "Vũ Thanh Bảy",
+    "role": "Fullstack Engineer"
   },
   "cv": {
     "file": "Vu-Thanh-Bay-CV.pdf",
     "download": "Tải CV (PDF)"
   },
   "nav": {
-    "experience": "Kinh nghiệm",
-    "projects": "Dự án",
+    "experience": "Dự án",
+    "projects": "Tác động",
     "openSource": "Mã nguồn mở",
     "contact": "Liên hệ",
     "downloadCv": "Tải CV",
     "language": "Ngôn ngữ"
   },
   "hero": {
-    "pill": "Đang tìm vị trí Frontend / Fullstack",
+    "pill": "Đang tìm vị trí Fullstack",
     "pillLink": "Liên hệ",
     "title": "Xin chào, tôi là Bảy.",
-    "lead": "Trong 9 tháng, tôi cùng AI xây lại nền tảng bán hàng của Thinkpro: một bộ code cho 4 website và 1 trang quản trị, kết nối hơn 15 dịch vụ, thinkpro.vn đang chạy trên đó. Trước đó là 8 năm làm Frontend với Vue / Nuxt.",
+    "lead": "Tôi biến nghiệp vụ bán hàng rối rắm thành phần mềm chạy ổn định: đơn hàng, kho, thanh toán, vận chuyển. 8 năm với Vue / Nuxt, giờ làm cả Node.js và PostgreSQL phía sau.",
     "trustPrs": "<b>1.060</b> PR đã gộp",
     "trustNpm": "<b>31</b> gói npm"
   },
   "glance": {
     "eyebrow": "Tóm tắt nhanh",
-    "title": "Làm giao diện, hiểu nghiệp vụ, cầm lái AI.",
+    "title": "Giao diện, hệ thống phía sau, và nghiệp vụ.",
     "statYears": "Năm làm Vue / Nuxt",
     "statPrs": "PR đã gộp vào nền tảng mới",
     "statPrsValue": "1.060",
@@ -43,30 +44,30 @@
     "s1Cmd": "$ lighthouse thinkpro.vn   # bản V4",
     "s1Speed": "- tốc độ ....",
     "s1SpeedNote": "điện thoại + máy tính",
-    "s2Title": "Nghiệp vụ",
-    "s2Text": "Tôi là tác giả phần lớn nền tảng bán lẻ mới: đơn hàng, kho, bảo hành, sàn, vận chuyển.",
+    "s2Title": "Backend",
+    "s2Text": "Đơn hàng, kho, bảo hành, sàn, vận chuyển, trên PostgreSQL, Redis và hàng đợi việc nền. Tôi là tác giả phần lớn nền tảng mới.",
     "s2Note": "# ~72% trên 1.482 PR của dự án",
     "s3Title": "Cầm lái AI",
-    "s3Text": "AI viết code theo luật tôi đặt. Tôi quyết kiến trúc, nghiệp vụ và rà soát trước khi gộp.",
+    "s3Text": "AI viết code theo luật tôi đặt. Tôi quyết kiến trúc, nghiệp vụ và rà soát mọi thay đổi trước khi gộp.",
     "s3Cmd": "$ claude \"thêm đối soát tiền thu hộ GHN\"",
     "s3Line1": "- đọc code thật trước khi sửa",
     "s3Line2": "- hook chặn lệnh nguy hiểm ..",
     "s3Line3": "- tôi rà soát rồi mới gộp ..."
   },
   "exp": {
-    "eyebrow": "Kinh nghiệm tại Thinkpro",
-    "title": "Tám năm Frontend.<br /><em>Một năm cầm lái cả hệ thống.</em>",
+    "eyebrow": "Dự án tiêu biểu",
+    "title": "Hai hệ thống tôi xây.<br /><em>Cả hai đang chạy thật.</em>",
     "feTitle": "Storefront thinkpro.vn",
     "feText": "Xây qua 2 thế hệ, Nuxt 2 rồi Nuxt 3, tự viết khoảng 3/4 số code.",
     "gaugeSpeed": "Tốc độ",
     "gaugeNote": "Lighthouse, bản V4",
     "feCheck1": "Điểm tốc độ <b>100/100</b> trên cả điện thoại lẫn máy tính",
     "feCheck2": "SEO kỹ thuật cùng đội marketing: dữ liệu có cấu trúc, sitemap, Merchant Center",
-    "feCheck3": "CMS nội bộ, storefront GoodSpace, giao diện cho nice.design",
+    "feCheck3": "CMS nội bộ, storefront GoodSpace, giao diện cho NiceDesign",
     "leadRole": "Kỹ sư dẫn dắt nền tảng mới",
     "leadWhen": "02/2026 - nay",
     "leadTitle": "Nền tảng bán lẻ đa site",
-    "leadText": "Thay hệ cũ Laravel / MySQL bằng một bộ code Nuxt 4 phục vụ 4 site và 1 CMS.",
+    "leadText": "Một bộ code Nuxt 4 trên Node.js, PostgreSQL, Redis và BullMQ, thay hệ cũ Laravel / MySQL cho 4 site và 1 trang quản trị.",
     "flowOrder": "Đơn hàng",
     "flowFulfillment": "Xuất kho",
     "flowShipping": "Giao vận",
@@ -85,7 +86,7 @@
     "caption": "<b>PR đã gộp vào nền tảng mới</b>, khoảng 72% của cả dự án, trong 9 tháng."
   },
   "projects": {
-    "eyebrow": "Dự án & tác động",
+    "eyebrow": "Tác động",
     "title": "Việc tôi làm, đổi được gì.",
     "p1Hub": "1 bộ code Nuxt 4",
     "p1Tag": "Nền tảng",
@@ -132,19 +133,19 @@
   "skills": {
     "eyebrow": "Kỹ năng",
     "title": "Ghi đúng mức mình làm được.",
-    "proficient": "Thành thạo",
-    "proficientNote": "tự làm, tự chịu trách nhiệm",
-    "withAi": "Xây cùng AI",
-    "withAiNote": "tôi thiết kế, quyết định, rà soát",
+    "proficient": "Frontend",
+    "proficientNote": "Vue / Nuxt từ 2018",
+    "withAi": "Backend",
+    "withAiNote": "chạy thật từ 2026",
     "aiWork": "Làm việc với AI",
-    "aiWorkNote": "công cụ hằng ngày",
+    "aiWorkNote": "cách tôi làm hằng ngày",
     "tagSeo": "SEO kỹ thuật",
     "tagRules": "Viết luật & hook cho AI"
   },
   "contact": {
     "eyebrow": "Liên hệ",
     "title": "Cùng làm điều gì đó chạy thật nhé.",
-    "text": "Đang tìm vị trí Frontend / Fullstack tại công ty sản phẩm, ở Hà Nội.",
+    "text": "Đang tìm vị trí Fullstack tại công ty sản phẩm, ở Hà Nội.",
     "showPhone": "Hiện số điện thoại"
   },
   "footer": {

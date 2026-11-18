@@ -4,36 +4,37 @@
     "ogLocale": "en_US",
     "numberLocale": "en-US",
     "phoneIntl": true,
-    "title": "Vu Thanh Bay | Senior Frontend Engineer",
-    "description": "Nearly 8 years building web interfaces with Vue / Nuxt. Leading the build of a multi-site retail platform with AI: 1,060 PRs merged, 15+ services integrated.",
-    "ogDescription": "Nearly 8 years building web interfaces with Vue / Nuxt. Leading the build of a multi-site retail platform with AI."
+    "title": "Vu Thanh Bay | Fullstack Engineer",
+    "description": "Fullstack engineer, 8 years building for the web with Vue / Nuxt. Built a multi-site retail platform now in production: 1,060 PRs merged, 15+ services integrated.",
+    "ogDescription": "Fullstack engineer. Built a multi-site retail platform now in production, end to end."
   },
   "brand": {
-    "name": "Vu Thanh Bay"
+    "name": "Vu Thanh Bay",
+    "role": "Fullstack Engineer"
   },
   "cv": {
     "file": "Vu-Thanh-Bay-CV-EN.pdf",
     "download": "Download CV (PDF)"
   },
   "nav": {
-    "experience": "Experience",
-    "projects": "Projects",
+    "experience": "Projects",
+    "projects": "Impact",
     "openSource": "Open source",
     "contact": "Contact",
     "downloadCv": "Get CV",
     "language": "Language"
   },
   "hero": {
-    "pill": "Open to Frontend / Fullstack roles",
+    "pill": "Open to Fullstack roles",
     "pillLink": "Contact",
     "title": "Hi, I'm Bay.",
-    "lead": "In 9 months I rebuilt Thinkpro's retail platform with AI: one codebase for 4 sites and 1 admin, 15+ integrations, with thinkpro.vn running on it. Before that, 8 years of frontend with Vue / Nuxt.",
+    "lead": "I turn messy retail operations into software that holds up: orders, inventory, payments, shipping. 8 years with Vue / Nuxt, now building the Node.js and PostgreSQL side too.",
     "trustPrs": "<b>1,060</b> PRs merged",
     "trustNpm": "<b>31</b> npm packages"
   },
   "glance": {
     "eyebrow": "At a glance",
-    "title": "Build the UI, know the business, steer the AI.",
+    "title": "Frontend, backend, and the business behind them.",
     "statYears": "Years with Vue / Nuxt",
     "statPrs": "PRs merged into the new platform",
     "statPrsValue": "1,060",
@@ -43,30 +44,30 @@
     "s1Cmd": "$ lighthouse thinkpro.vn   # V4",
     "s1Speed": "- speed .....",
     "s1SpeedNote": "mobile + desktop",
-    "s2Title": "Business logic",
-    "s2Text": "I authored most of the new retail platform: orders, inventory, warranty, marketplaces, shipping.",
+    "s2Title": "Backend",
+    "s2Text": "Orders, inventory, warranty, marketplaces, shipping, on PostgreSQL, Redis and job queues. I authored most of the new platform.",
     "s2Note": "# ~72% of the project's 1,482 PRs",
     "s3Title": "Steering AI",
-    "s3Text": "AI writes code under rules I set. I decide the architecture and business logic, and review before merging.",
+    "s3Text": "AI writes code under rules I set. I own the architecture and business decisions, and review every change before merging.",
     "s3Cmd": "$ claude \"add GHN cash-on-delivery reconciliation\"",
     "s3Line1": "- read real code before edits",
     "s3Line2": "- hooks block unsafe commands",
     "s3Line3": "- I review before merging ..."
   },
   "exp": {
-    "eyebrow": "Experience at Thinkpro",
-    "title": "Eight years of frontend.<br /><em>One year steering the whole system.</em>",
+    "eyebrow": "Selected projects",
+    "title": "Two systems I built.<br /><em>Both running in production.</em>",
     "feTitle": "thinkpro.vn storefront",
     "feText": "Built across 2 generations, Nuxt 2 then Nuxt 3, writing about three quarters of the code myself.",
     "gaugeSpeed": "Performance",
     "gaugeNote": "Lighthouse, V4",
     "feCheck1": "Performance score <b>100/100</b> on both mobile and desktop",
     "feCheck2": "Technical SEO with the marketing team: structured data, sitemaps, Merchant Center",
-    "feCheck3": "Internal CMS, the GoodSpace storefront, front ends for nice.design",
+    "feCheck3": "Internal CMS, the GoodSpace storefront, front ends for NiceDesign",
     "leadRole": "Lead engineer, new platform",
     "leadWhen": "02/2026 - present",
     "leadTitle": "Multi-site retail platform",
-    "leadText": "Replaced the legacy Laravel / MySQL system with one Nuxt 4 codebase serving 4 sites and 1 CMS.",
+    "leadText": "One Nuxt 4 codebase on Node.js, PostgreSQL, Redis and BullMQ, replacing the legacy Laravel / MySQL system for 4 sites and 1 admin.",
     "flowOrder": "Order",
     "flowFulfillment": "Fulfillment",
     "flowShipping": "Shipping",
@@ -85,7 +86,7 @@
     "caption": "<b>PRs merged into the new platform</b>, about 72% of the whole project, in 9 months."
   },
   "projects": {
-    "eyebrow": "Projects & impact",
+    "eyebrow": "Impact",
     "title": "What I did, and what it changed.",
     "p1Hub": "1 Nuxt 4 codebase",
     "p1Tag": "Platform",
@@ -132,19 +133,19 @@
   "skills": {
     "eyebrow": "Skills",
     "title": "Listed at my real level.",
-    "proficient": "Proficient",
-    "proficientNote": "I build it and own it",
-    "withAi": "Built with AI",
-    "withAiNote": "I design, decide and review",
-    "aiWork": "Working with AI",
-    "aiWorkNote": "daily tools",
+    "proficient": "Frontend",
+    "proficientNote": "Vue / Nuxt since 2018",
+    "withAi": "Backend",
+    "withAiNote": "in production since 2026",
+    "aiWork": "AI workflow",
+    "aiWorkNote": "how I work every day",
     "tagSeo": "Technical SEO",
     "tagRules": "Writing rules & hooks for AI"
   },
   "contact": {
     "eyebrow": "Contact",
     "title": "Let's build something that actually ships.",
-    "text": "Looking for a Frontend / Fullstack role at a product company in Hanoi.",
+    "text": "Looking for a Fullstack role at a product company in Hanoi.",
     "showPhone": "Show phone number"
   },
   "footer": {
